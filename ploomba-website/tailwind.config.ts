@@ -10,16 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Ploomba brand colors
-        'pl-red': 'hsl(var(--pl-red))',
-        'pl-red-darker': 'hsl(var(--pl-red-darker))',
-        'pl-black': 'hsl(var(--pl-black))',
-        'pl-white': 'hsl(var(--pl-white))',
-        'pl-grey': 'hsl(var(--pl-grey))',
-        'pl-light-grey': 'hsl(var(--pl-light-grey))',
-        'pl-accent': 'hsl(var(--pl-accent))',
-        
-        // Semantic colors
+        // Semantic colors - these should work with the CSS variables
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         primary: {
@@ -44,18 +35,6 @@ const config: Config = {
           foreground: 'hsl(var(--card-foreground))',
         },
         border: 'hsl(var(--border))',
-        destructive: {
-          DEFAULT: 'hsl(var(--destructive))',
-          foreground: 'hsl(var(--destructive-foreground))',
-        },
-        success: {
-          DEFAULT: 'hsl(var(--success))',
-          foreground: 'hsl(var(--success-foreground))',
-        },
-        warning: {
-          DEFAULT: 'hsl(var(--warning))',
-          foreground: 'hsl(var(--warning-foreground))',
-        },
       },
     },
   },
