@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Truck, Smartphone, BarChart3 } from 'lucide-react';
 
 interface ServiceCardProps {
@@ -20,52 +21,58 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   description, 
   onLearnMore 
 }) => {
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    show: { opacity: 1, y: 0 }
+  };
+
   return (
-    <div className="bg-card border border-border rounded-lg p-6 sm:p-8 hover:shadow-lg transition-shadow duration-200">
+    <motion.div
+      variants={cardVariants}
+      className="group block rounded-lg border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-primary/50"
+    >
       {/* Icon */}
-      <div className="flex items-center justify-center w-16 h-16 bg-primary/10 rounded-lg mb-6">
-        <div className="text-primary">
-          {icon}
-        </div>
+      <div className="h-10 w-10 text-primary">
+        {icon}
       </div>
 
       {/* Title */}
-      <h3 className="text-xl sm:text-2xl font-bold text-card-foreground mb-4">
+      <h3 className="mt-4 text-xl font-semibold text-foreground">
         {title}
       </h3>
 
       {/* Description */}
-      <p className="text-muted-foreground mb-6 leading-relaxed">
+      <p className="mt-2 text-muted-foreground">
         {description}
       </p>
 
       {/* Learn More Link */}
-      <button
+      <a
         onClick={onLearnMore}
-        className="text-primary hover:text-primary-hover font-medium transition-colors duration-200 hover:underline"
+        className="mt-4 font-medium text-primary transition-all group-hover:pl-1 cursor-pointer"
       >
-        Learn More
-      </button>
-    </div>
+        Learn More &rarr;
+      </a>
+    </motion.div>
   );
 };
 
 const ServicesOverview: React.FC<ServicesOverviewProps> = ({ className = '' }) => {
   const services = [
     {
-      icon: <Truck size={32} />,
+      icon: <Truck size={40} />,
       title: "Autonomous Wagon",
-      description: "Customizable electric wagon transports loads up to 300kg and analyzes fields as it passes.",
+      description: "Our customizable electric wagon transports loads up to 300kg and analyzes fields as it passes.",
     },
     {
-      icon: <Smartphone size={32} />,
+      icon: <Smartphone size={40} />,
       title: "Agro App",
-      description: "Monitor your equipment, model production, and manage your fields from one central app.",
+      description: "Monitor equipment, model production, and manage your fields from one central, farmer-first app.",
     },
     {
-      icon: <BarChart3 size={32} />,
+      icon: <BarChart3 size={40} />,
       title: "Analysis Platform",
-      description: "Access powerful AI models and graphical data visualization to accurately estimate yields and detect issues.",
+      description: "Access AI models and graphical data to accurately estimate yields and detect issues before they spread.",
     },
   ];
 
@@ -74,18 +81,35 @@ const ServicesOverview: React.FC<ServicesOverviewProps> = ({ className = '' }) =
     console.log(`Learn more about ${serviceTitle}`);
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: { 
+      opacity: 1, 
+      transition: { staggerChildren: 0.2 } 
+    }
+  };
+
   return (
-    <section className={`py-16 sm:py-20 lg:py-24 ${className}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main Heading */}
-        <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+    <section className={`py-16 sm:py-24 bg-background ${className}`}>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center">
+          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             A Complete Ag-Tech Solution
           </h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            From autonomous hardware to AI-powered analytics, our platform works together to optimize your entire operation.
+          </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+        {/* Animated Grid */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
+          className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
+        >
           {services.map((service, index) => (
             <ServiceCard
               key={index}
@@ -95,7 +119,7 @@ const ServicesOverview: React.FC<ServicesOverviewProps> = ({ className = '' }) =
               onLearnMore={() => handleLearnMore(service.title)}
             />
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,6 +1,8 @@
 "use client";
 
 import React from 'react';
+import { motion } from 'framer-motion';
+import { ChevronDown } from 'lucide-react';
 
 interface HeroSectionProps {
   className?: string;
@@ -8,11 +10,11 @@ interface HeroSectionProps {
 
 const HeroSection: React.FC<HeroSectionProps> = ({ className = '' }) => {
   return (
-    <section className={`relative h-screen overflow-hidden ${className}`}>
+    <section className={`relative h-screen w-full overflow-hidden ${className}`}>
       {/* Background Video - Hidden on mobile */}
       <div className="absolute inset-0 hidden md:block">
         <video
-          className="w-full h-full object-cover"
+          className="absolute top-0 left-0 min-w-full min-h-full object-cover z-0"
           autoPlay
           muted
           loop
@@ -29,43 +31,57 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className = '' }) => {
 
       {/* Fallback Background Image - Visible on mobile */}
       <div 
-        className="absolute inset-0 md:hidden bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 md:hidden bg-cover bg-center bg-no-repeat z-0"
         style={{
           backgroundImage: 'url(https://placehold.co/600x800/2B3036/FFFFFF?text=Ploomba+Robot)'
         }}
       />
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/50" />
+      <div className="absolute inset-0 bg-black/60 z-10" />
 
-      {/* Centered Content */}
-      <div className="relative z-10 flex items-center justify-center h-full px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-4xl mx-auto">
+      {/* Main Content */}
+      <div className="relative z-20 flex h-full flex-col items-center justify-center text-center text-white p-8">
+        {/* Animated Content Block */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+        >
           {/* Main Heading */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-4xl font-bold tracking-tight md:text-6xl">
             Smarter Farming.{' '}
             <span className="block">Stronger Yields.</span>
           </h1>
 
           {/* Sub-heading */}
-          <p className="text-lg sm:text-xl md:text-2xl text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="mt-6 max-w-2xl text-lg text-white/80">
             {/* cspell:disable-next-line */}
             Ploomba&apos;s autonomous robots and AI-driven analytics help you reduce soil compaction and optimize your harvest.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
+          <div className="mt-10 flex flex-wrap gap-4 items-center justify-center">
             {/* Primary CTA */}
-            <button className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary-hover px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200 shadow-lg hover:shadow-xl">
+            <button className="bg-primary text-primary-foreground hover:bg-primary-hover px-6 py-3 rounded-md font-semibold transition-colors">
               Request a Demo
             </button>
 
             {/* Secondary CTA */}
-            <button className="w-full sm:w-auto bg-secondary text-secondary-foreground hover:bg-secondary/80 px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200 border border-border hover:border-border/80">
+            <button className="bg-secondary text-secondary-foreground hover:bg-secondary/80 px-6 py-3 rounded-md font-semibold transition-colors">
               Learn More
             </button>
           </div>
-        </div>
+        </motion.div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          className="absolute bottom-10 z-20"
+          animate={{ y: [0, 5, 0] }}
+          transition={{ repeat: Infinity, duration: 1.5 }}
+        >
+          <ChevronDown size={24} className="text-white/60" />
+        </motion.div>
       </div>
     </section>
   );

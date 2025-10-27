@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import { motion } from 'framer-motion';
 
 interface BlogPost {
   id: number;
@@ -48,59 +49,90 @@ const ContentTeaser: React.FC<ContentTeaserProps> = ({ className = '' }) => {
     console.log(`Navigate to blog post: ${slug}`);
   };
 
-  return (
-    <section className={`py-16 sm:py-20 lg:py-24 ${className}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main Heading */}
-        <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
-            Latest News &amp; Insights
-          </h2>
-        </div>
+  const handleViewAll = () => {
+    // TODO: Implement navigation to blog listing
+    console.log('Navigate to all posts');
+  };
 
-        {/* Blog Posts Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: { 
+      opacity: 1, 
+      transition: { staggerChildren: 0.2 } 
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    show: { opacity: 1, y: 0 }
+  };
+
+  return (
+    <section className={`py-16 sm:py-24 bg-background ${className}`}>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <h2 className="text-center text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          Latest News &amp; Insights
+        </h2>
+
+        {/* Animated Grid */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
+          className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
+        >
           {blogPosts.map((post) => (
-            <article
+            <motion.div
               key={post.id}
-              className="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-200"
+              variants={cardVariants}
+              className="group flex flex-col overflow-hidden rounded-lg border border-border bg-card transition-all duration-300 hover:shadow-lg"
             >
               {/* Post Image */}
-              <div className="aspect-video overflow-hidden">
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-200"
-                />
-              </div>
+              <img
+                src={post.image}
+                alt={post.title}
+                className="h-48 w-full object-cover"
+              />
 
               {/* Content Block */}
-              <div className="p-6 sm:p-8">
+              <div className="flex flex-1 flex-col justify-between p-6">
                 {/* Tag */}
-                <p className="text-sm font-medium text-primary mb-3">
+                <p className="text-xs font-medium uppercase text-primary">
                   {post.tag}
                 </p>
 
                 {/* Title */}
-                <h3 className="text-xl sm:text-2xl font-bold text-card-foreground mb-4 leading-tight">
+                <h3 className="mt-2 text-xl font-semibold text-foreground transition-colors group-hover:text-primary">
                   {post.title}
                 </h3>
 
                 {/* Excerpt */}
-                <p className="text-muted-foreground mb-6 leading-relaxed">
+                <p className="mt-3 text-base text-muted-foreground">
                   {post.excerpt}
                 </p>
 
-                {/* Read More Link */}
-                <button
+                {/* Read More */}
+                <div 
                   onClick={() => handleReadMore(post.slug)}
-                  className="text-primary hover:text-primary-hover font-medium transition-colors duration-200 hover:underline"
+                  className="mt-4 font-semibold text-primary transition-all group-hover:pl-1 cursor-pointer"
                 >
-                  Read More
-                </button>
+                  Read More &rarr;
+                </div>
               </div>
-            </article>
+            </motion.div>
           ))}
+        </motion.div>
+
+        {/* View All Button */}
+        <div className="mt-16 text-center">
+          <button
+            onClick={handleViewAll}
+            className="bg-secondary text-secondary-foreground hover:bg-secondary/80 px-6 py-3 rounded-md font-semibold transition-colors"
+          >
+            View All Posts
+          </button>
         </div>
       </div>
     </section>
