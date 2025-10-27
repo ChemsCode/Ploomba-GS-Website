@@ -28,8 +28,7 @@
  *    - hover:bg-primary-hover (for interactive elements)
  */
 
-@import "tailwindcss/preflight";
-@import "tailwindcss/utilities";
+@import "tailwindcss";
 
 @layer base {
   :root {
