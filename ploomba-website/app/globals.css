@@ -1,26 +1,169 @@
-@import "tailwindcss";
+/* 
+ * Ploomba Website Theme - Global Styles
+ * 
+ * This file contains the complete theme system for the Ploomba website.
+ * It includes brand colors, semantic colors, and both light/dark mode support.
+ * 
+ * USAGE GUIDE:
+ * ============
+ * 
+ * 1. BRAND COLORS (Direct CSS Variables):
+ *    - Use these for consistent brand identity
+ *    - Example: background-color: hsl(var(--pl-red));
+ *    - Available: --pl-red, --pl-red-darker, --pl-black, --pl-white, --pl-grey, --pl-light-grey, --pl-accent
+ * 
+ * 2. SEMANTIC COLORS (Tailwind Classes):
+ *    - Use these for UI components and layouts
+ *    - Example: className="bg-primary text-primary-foreground"
+ *    - Available: primary, secondary, muted, accent, card, border, destructive, success, warning
+ * 
+ * 3. DARK MODE:
+ *    - Add 'dark' class to parent element to enable dark mode
+ *    - Example: <div className="dark">...</div>
+ *    - Colors automatically switch based on theme
+ * 
+ * 4. TAILWIND UTILITY CLASSES:
+ *    - bg-primary, text-primary, border-primary
+ *    - bg-pl-red, text-pl-red, border-pl-red (brand colors)
+ *    - hover:bg-primary-hover (for interactive elements)
+ */
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import "tailwindcss/preflight";
+@import "tailwindcss/utilities";
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* 
+     * BASE BRAND PALETTE
+     * These are the core Ploomba brand colors in HSL format
+     * Use these for logos, headers, and brand-specific elements
+     */
+    --pl-red: 350 96% 43%; /* #D90429 - Primary brand red */
+    --pl-red-darker: 350 96% 38%; /* Darker red for hover states and pressed buttons */
+    --pl-black: 214 12% 19%; /* #2B3036 - Soft professional black for text */
+    --pl-white: 0 0% 100%; /* #FFFFFF - Pure white for backgrounds */
+    --pl-grey: 210 5% 48%; /* #6F757C - Medium grey for body text */
+    --pl-light-grey: 210 14% 96%; /* #F3F4F5 - Light grey for borders and subtle backgrounds */
+    --pl-accent: 42 100% 51%; /* #FFB703 - Gold accent color for highlights */
+    
+    /* 
+     * FUNCTIONAL COLORS
+     * These extend the brand palette for UI states
+     */
+    --pl-success-green: 140 65% 45%; /* Success states, confirmations */
+    --pl-danger-red: 0 84% 60%; /* Error states, deletions */
+
+    /* 
+     * SEMANTIC LIGHT MODE COLORS
+     * These map brand colors to semantic meanings for consistent UI
+     * Use Tailwind classes like bg-primary, text-primary-foreground
+     */
+    --background: var(--pl-white);        /* Main page background */
+    --foreground: var(--pl-black);       /* Main text color */
+    --primary: var(--pl-red);            /* Primary buttons, links, highlights */
+    --primary-hover: var(--pl-red-darker); /* Primary hover state */
+    --primary-foreground: var(--pl-white); /* Text on primary backgrounds */
+    --secondary: var(--pl-black);        /* Secondary buttons, subtle elements */
+    --secondary-foreground: var(--pl-white); /* Text on secondary backgrounds */
+    --muted: var(--pl-light-grey);       /* Subtle backgrounds, disabled states */
+    --muted-foreground: var(--pl-grey);  /* Muted text, placeholders */
+    --accent: var(--pl-accent);          /* Accent highlights, special elements */
+    --accent-foreground: var(--pl-black); /* Text on accent backgrounds */
+    --card: var(--pl-white);             /* Card/panel backgrounds */
+    --card-foreground: var(--pl-black);  /* Text on cards */
+    --border: var(--pl-light-grey);      /* Borders, dividers */
+    
+    /* 
+     * FUNCTIONAL SEMANTIC COLORS
+     * These provide meaning-based colors for different UI states
+     */
+    --destructive: var(--pl-danger-red);     /* Delete buttons, error states */
+    --destructive-foreground: var(--pl-white); /* Text on destructive backgrounds */
+    --success: var(--pl-success-green);      /* Success messages, confirmations */
+    --success-foreground: var(--pl-white);   /* Text on success backgrounds */
+    --warning: var(--pl-accent);             /* Warning messages, alerts */
+    --warning-foreground: var(--pl-black);   /* Text on warning backgrounds */
+  }
+
+  .dark {
+    /* 
+     * SEMANTIC DARK MODE COLORS
+     * These override the light mode colors when .dark class is applied
+     * Usage: Add className="dark" to any parent element to enable dark mode
+     * 
+     * Example:
+     * <div className="dark">
+     *   <button className="bg-primary text-primary-foreground">Button</button>
+     * </div>
+     */
+    --background: var(--pl-black);           /* Dark background */
+    --foreground: var(--pl-white);          /* Light text on dark background */
+    --primary: var(--pl-red);               /* Primary color remains the same */
+    --primary-hover: var(--pl-red-darker);  /* Primary hover state */
+    --primary-foreground: var(--pl-white);  /* White text on primary */
+    --secondary: var(--pl-light-grey);      /* Light grey for secondary elements */
+    --secondary-foreground: var(--pl-black); /* Dark text on light secondary */
+    --muted: 214 12% 24%;                  /* #373C41 - Darker muted background */
+    --muted-foreground: var(--pl-light-grey); /* Light text on muted background */
+    --accent: var(--pl-accent);             /* Accent color remains the same */
+    --accent-foreground: var(--pl-black);   /* Dark text on accent */
+    --card: 214 12% 24%;                   /* #373C41 - Dark card background */
+    --card-foreground: var(--pl-white);     /* Light text on cards */
+    --border: 214 12% 30%;                 /* #42484E - Darker borders */
+    
+    /* Functional colors remain the same in dark mode */
+    --destructive: var(--pl-danger-red);
+    --destructive-foreground: var(--pl-white);
+    --success: var(--pl-success-green);
+    --success-foreground: var(--pl-white);
+    --warning: var(--pl-accent);
+    --warning-foreground: var(--pl-black);
   }
 }
 
+
+/* 
+ * BASE BODY STYLES
+ * Applies the theme colors to the main body element
+ */
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* 
+ * PRACTICAL USAGE EXAMPLES
+ * =======================
+ * 
+ * 1. BUTTONS:
+ *    <button className="bg-primary text-primary-foreground hover:bg-primary-hover">
+ *      Primary Button
+ *    </button>
+ * 
+ * 2. CARDS:
+ *    <div className="bg-card text-card-foreground border border-border rounded-lg p-4">
+ *      Card Content
+ *    </div>
+ * 
+ * 3. BRAND ELEMENTS:
+ *    <div className="bg-pl-red text-pl-white">
+ *      Brand Section
+ *    </div>
+ * 
+ * 4. STATUS INDICATORS:
+ *    <div className="bg-success text-success-foreground">Success Message</div>
+ *    <div className="bg-destructive text-destructive-foreground">Error Message</div>
+ *    <div className="bg-warning text-warning-foreground">Warning Message</div>
+ * 
+ * 5. DARK MODE TOGGLE:
+ *    <div className="dark">
+ *      <p className="text-foreground">This text will be white in dark mode</p>
+ *    </div>
+ * 
+ * 6. CUSTOM CSS WITH VARIABLES:
+ *    .custom-element {
+ *      background-color: hsl(var(--pl-accent));
+ *      color: hsl(var(--accent-foreground));
+ *    }
+ */
