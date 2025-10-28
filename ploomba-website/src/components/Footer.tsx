@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Footer: React.FC = () => {
   const navLinks = [
@@ -22,14 +23,18 @@ const Footer: React.FC = () => {
           {/* Column 1 - Brand */}
           <div>
             <div className="mb-4">
-              <img 
+              <Image 
                 src="/Ploomba_Logo_With_Text_Black_Text.svg" 
                 alt="Ploomba" 
+                width={120}
+                height={32}
                 className="h-8 w-auto dark:hidden"
               />
-              <img 
+              <Image 
                 src="/Ploomba_Logo_With_Text_White_Text.svg" 
                 alt="Ploomba" 
+                width={120}
+                height={32}
                 className="h-8 w-auto hidden dark:block"
               />
             </div>

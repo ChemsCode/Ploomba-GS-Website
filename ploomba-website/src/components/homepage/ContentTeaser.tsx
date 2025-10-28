@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 interface BlogPost {
@@ -90,9 +91,11 @@ const ContentTeaser: React.FC<ContentTeaserProps> = ({ className = '' }) => {
               className="group flex flex-col overflow-hidden rounded-lg border border-border bg-card transition-all duration-300 hover:shadow-lg"
             >
               {/* Post Image */}
-              <img
+              <Image
                 src={post.image}
                 alt={post.title}
+                width={400}
+                height={250}
                 className="h-48 w-full object-cover"
               />
 

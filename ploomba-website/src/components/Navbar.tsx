@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import ThemeToggle from './ThemeToggle';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -54,15 +55,19 @@ const Navbar: React.FC = () => {
             {/* Logo */}
             <Link href="/" className="flex-shrink-0">
               {theme === 'light' ? (
-                <img 
+                <Image 
                   src="/Ploomba_Logo_With_Text_Black_Text.svg" 
                   alt="Ploomba" 
+                  width={120}
+                  height={32}
                   className="h-8 w-auto"
                 />
               ) : (
-                <img 
+                <Image 
                   src="/Ploomba_Logo_With_Text_White_Text.svg" 
                   alt="Ploomba" 
+                  width={120}
+                  height={32}
                   className="h-8 w-auto"
                 />
               )}
@@ -126,15 +131,19 @@ const Navbar: React.FC = () => {
               <div className="flex items-center justify-between mb-8">
                 <Link href="/" onClick={() => setIsOpen(false)}>
                   {theme === 'light' ? (
-                    <img 
+                    <Image 
                       src="/Ploomba_Logo_With_Text_Black_Text.svg" 
                       alt="Ploomba" 
+                      width={120}
+                      height={32}
                       className="h-8 w-auto"
                     />
                   ) : (
-                    <img 
+                    <Image 
                       src="/Ploomba_Logo_With_Text_White_Text.svg" 
                       alt="Ploomba" 
+                      width={120}
+                      height={32}
                       className="h-8 w-auto"
                     />
                   )}

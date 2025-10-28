@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Quote } from 'lucide-react';
 
@@ -73,9 +74,11 @@ const SocialProof: React.FC<SocialProofProps> = ({ className = '' }) => {
           <div className="mt-8 grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-5">
             {partnerLogos.map((partner) => (
               <div key={partner.id} className="col-span-1">
-                <img
+                <Image
                   src={partner.logo}
                   alt={`${partner.name} logo`}
+                  width={150}
+                  height={60}
                   className="col-span-1 filter grayscale opacity-60 transition duration-300 hover:grayscale-0 hover:opacity-100"
                 />
               </div>
