@@ -5,10 +5,12 @@ import Link from 'next/link';
 import ThemeToggle from './ThemeToggle';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTheme } from '../app/theme-context';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { theme } = useTheme();
 
   // Scroll detection effect
   useEffect(() => {
@@ -51,7 +53,19 @@ const Navbar: React.FC = () => {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex-shrink-0">
-              <span className="text-2xl font-bold text-primary tracking-tight">PLOOMBA</span>
+              {theme === 'light' ? (
+                <img 
+                  src="/Ploomba_Logo_With_Text_Black_Text.svg" 
+                  alt="Ploomba" 
+                  className="h-8 w-auto"
+                />
+              ) : (
+                <img 
+                  src="/Ploomba_Logo_With_Text_White_Text.svg" 
+                  alt="Ploomba" 
+                  className="h-8 w-auto"
+                />
+              )}
             </Link>
 
             {/* Desktop Navigation */}
@@ -111,7 +125,19 @@ const Navbar: React.FC = () => {
               {/* Mobile Header */}
               <div className="flex items-center justify-between mb-8">
                 <Link href="/" onClick={() => setIsOpen(false)}>
-                  <span className="text-2xl font-bold text-primary tracking-tight">PLOOMBA</span>
+                  {theme === 'light' ? (
+                    <img 
+                      src="/Ploomba_Logo_With_Text_Black_Text.svg" 
+                      alt="Ploomba" 
+                      className="h-8 w-auto"
+                    />
+                  ) : (
+                    <img 
+                      src="/Ploomba_Logo_With_Text_White_Text.svg" 
+                      alt="Ploomba" 
+                      className="h-8 w-auto"
+                    />
+                  )}
                 </Link>
                 <button 
                   onClick={() => setIsOpen(false)}

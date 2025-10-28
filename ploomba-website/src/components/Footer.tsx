@@ -21,8 +21,19 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Column 1 - Brand */}
           <div>
-            <h3 className="text-xl font-bold text-primary">PLOOMBA</h3>
-            <p className="mt-4 text-sm text-secondary-foreground/80">
+            <div className="mb-4">
+              <img 
+                src="/Ploomba_Logo_With_Text_Black_Text.svg" 
+                alt="Ploomba" 
+                className="h-8 w-auto dark:hidden"
+              />
+              <img 
+                src="/Ploomba_Logo_With_Text_White_Text.svg" 
+                alt="Ploomba" 
+                className="h-8 w-auto hidden dark:block"
+              />
+            </div>
+            <p className="text-sm text-secondary-foreground/80">
               Revolutionizing agriculture with autonomous robots and AI-driven analytics. 
               Helping farmers optimize yields and reduce soil compaction for sustainable farming.
             </p>
