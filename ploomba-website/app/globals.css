@@ -30,6 +30,38 @@
 
 @import "tailwindcss";
 
+@theme {
+  --color-primary: hsl(var(--primary));
+  --color-primary-hover: hsl(var(--primary-hover));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-border: hsl(var(--border));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-success: hsl(var(--success));
+  --color-success-foreground: hsl(var(--success-foreground));
+  --color-warning: hsl(var(--warning));
+  --color-warning-foreground: hsl(var(--warning-foreground));
+  
+  /* Ploomba brand colors */
+  --color-pl-red: hsl(var(--pl-red));
+  --color-pl-red-darker: hsl(var(--pl-red-darker));
+  --color-pl-black: hsl(var(--pl-black));
+  --color-pl-white: hsl(var(--pl-white));
+  --color-pl-grey: hsl(var(--pl-grey));
+  --color-pl-light-grey: hsl(var(--pl-light-grey));
+  --color-pl-accent: hsl(var(--pl-accent));
+}
+
 @layer base {
   :root {
     /* 
