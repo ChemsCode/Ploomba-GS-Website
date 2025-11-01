@@ -15,10 +15,10 @@ interface PostCardProps {
 
 export default function PostCard({ post }: PostCardProps) {
   return (
-    <div>
+    <div className="h-full">
       <Link
         href={`/blog/${post.slug}`}
-        className="group flex flex-col overflow-hidden rounded-lg border border-border bg-card transition-all duration-300 hover:shadow-lg"
+        className="group flex flex-col h-full overflow-hidden rounded-lg border border-border bg-card transition-all duration-300 hover:shadow-lg"
       >
         <img
           src={post.imageUrl}

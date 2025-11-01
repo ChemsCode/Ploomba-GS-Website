@@ -46,7 +46,7 @@ export default function BlogPage() {
             animate="visible"
           >
             {allPosts.map((post) => (
-              <motion.div key={post.slug} variants={cardVariants}>
+              <motion.div key={post.slug} variants={cardVariants} className="h-full">
                 <PostCard post={post} />
               </motion.div>
             ))}
