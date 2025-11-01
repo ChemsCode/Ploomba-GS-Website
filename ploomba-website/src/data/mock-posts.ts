@@ -1,3 +1,23 @@
+// src/data/mock-posts.ts
+
+// (The 'PostContent' and 'Post' types should already be here, keep them)
+export type PostContent = {
+  introduction: string;
+  keyInsight: {
+    title: string;
+    text: string;
+  };
+  sectionOne: {
+    title: string;
+    body: string;
+  };
+  sectionTwo: {
+    title: string;
+    body: string;
+  };
+  conclusion: string;
+};
+
 export type Post = {
   slug: string;
   title: string;
@@ -6,80 +26,84 @@ export type Post = {
   imageUrl: string;
   author: string;
   date: string;
-  content: string; // Full content in HTML format
+  content: PostContent;
 };
 
+// --- NEW EXPANDED CONTENT ---
 export const allPosts: Post[] = [
   {
     slug: 'rethinking-fieldwork-solving-soil-compaction',
     title: 'Rethinking Fieldwork: How Lightweight Autonomy Solves Soil Compaction',
     tag: 'Technology',
-    excerpt: 'Heavy machinery compacts your soil, strangling yields. Our autonomous wagon is designed to be lightweight and intelligent, solving this problem while freeing up your team.',
-    imageUrl: 'https://placehold.co/400x250/D90429/FFFFFF?text=Ploomba+Wagon+in+Field',
+    excerpt: 'Heavy machinery compacts your soil, strangling yields. Our autonomous wagon is designed to be lightweight and intelligent, solving this problem.',
+    imageUrl: '[https://placehold.co/400x250/D90429/FFFFFF?text=Ploomba+Wagon+in+Field](https://placehold.co/400x250/D90429/FFFFFF?text=Ploomba+Wagon+in+Field)',
     author: 'Ploomba Engineering Team',
     date: 'November 1, 2025',
-    content: `
-      <p>For decades, the answer to farm efficiency has been "bigger is better." Bigger tractors, bigger harvesters. But this comes at a steep, hidden cost: <strong>soil compaction</strong>.</p>
-      <p>Heavy machinery presses the life out of your soil, reducing water infiltration, harming root growth, and ultimately cutting into your yields. It's a problem that costs farmers thousands, and until now, the solutions have been limited.</p>
-      
-      <h2>A Smarter, Lighter Approach</h2>
-      <p>This is why we designed the Ploomba Autonomous Wagon. At its core, it's a paradigm shift. Instead of relying on a single, multi-ton machine, our philosophy is to use lightweight, intelligent, and autonomous assistants.</p>
-      <p>The wagon, with its 300 kg load capacity, is powerful enough to transport a picker's harvest or carry precision spraying equipment, but light enough to tread gently between rows. Its fully electric drivetrain doesn't just reduce your carbon footprint—it provides the steady, calculated torque needed to navigate fields without slipping or churning up soil.</p>
-
-      <h2>More Than Just Transport</h2>
-      <p>But reducing compaction is just the beginning. By making the wagon autonomous, it becomes a true "autonomous assistant for field work," just as our brochure states. It can follow a picker, transporting fruits and vegetables effortlessly, freeing that worker to focus 100% on harvesting. It can be dispatched for precision spraying, or—most importantly—it can analyze the fields as it passes.</p>
-      <p>This is the future of farming: not bigger, but smarter. It's about using distributed, lightweight technology to build healthier soil and more resilient, efficient, and profitable operations.</p>
-    `
+    content: {
+      introduction: "For decades, the answer to farm efficiency has been 'bigger is better.' Bigger tractors, bigger harvesters, heavier loads. But this philosophy comes at a steep, hidden cost: soil compaction. Year after year, this immense weight presses the life out of your soil, reducing porosity, harming root growth, and ultimately strangling your yields.",
+      keyInsight: {
+        title: "A Smarter, Lighter Approach",
+        text: "Instead of relying on a single, multi-ton machine for every task, our philosophy is to use a fleet of lightweight, intelligent, and autonomous assistants. This is the core of our design."
+      },
+      sectionOne: {
+        title: "The Problem with 'Bigger'",
+        body: "Soil compaction is a physical problem that requires a physical solution. When soil is compacted, water infiltration plummets, leading to runoff and wasted resources. Plant roots struggle to penetrate the dense earth, limiting their access to nutrients and water. This directly impacts your crop's resilience and final output. It's a problem that costs farmers thousands per acre, and until now, the solutions—like deep tilling—have been costly, temporary, and fuel-intensive."
+      },
+      sectionTwo: {
+        title: "More Than Just Transport",
+        body: "The Ploomba Autonomous Wagon, with its 300 kg load capacity, is the first step in this new direction. It's powerful enough to transport a picker's harvest or carry precision spraying equipment, but light enough to tread gently between rows. Its fully electric drivetrain doesn't just reduce emissions; it provides steady, calculated torque to navigate fields without churning up soil. By making it autonomous, it becomes a true 'autonomous assistant for field work,' as our mission states. It can follow a picker, 'transporting fruits and vegetables effortlessly,' freeing that worker to focus 100% on harvesting. It's a platform for smarter, more delicate farming."
+      },
+      conclusion: "This is the future of farming: not bigger, but smarter. It's about using distributed, lightweight technology to build healthier soil, reduce waste, and create more resilient, efficient, and profitable operations for generations to come."
+    }
   },
   {
     slug: 'ai-predicts-farm-yields',
     title: 'From Guesswork to Data-Driven Decisions: Using AI to Predict Yields',
     tag: 'Innovation',
     excerpt: 'Stop reacting to problems. Our Analysis Platform uses AI to help you recognize signs of pests and accurately estimate your yields months before harvest.',
-    imageUrl: 'https://placehold.co/400x250/2B3036/FFFFFF?text=Ploomba+AI+Platform',
+    imageUrl: '[https://placehold.co/400x250/2B3036/FFFFFF?text=Ploomba+AI+Platform](https://placehold.co/400x250/2B3036/FFFFFF?text=Ploomba+AI+Platform)',
     author: 'Dr. Jane Smith, Head of Data Science',
     date: 'October 28, 2025',
-    content: `
-      <p>How much yield will you get from Field B? Are those yellow spots on Block 3 a sign of pests or a nutrient deficiency? For most of agricultural history, the answer has been a "best guess" based on experience.</p>
-      <p>Experience is invaluable, but in a world of tight margins, guesswork is a liability. That's why we built our <strong>AI Tool and Analysis Platform</strong>.</p>
-      
-      <h2>Your Data, Working for You</h2>
-      <p>Our platform is designed to turn raw data into actionable intelligence. As our autonomous wagons move through the fields, they don't just "see"—they analyze. This data, combined with information from your equipment and our Agro App, feeds directly into our AI models.</p>
-      <p>What does this mean for you?</p>
-      
-      <h3>1. Accurately Estimate Your Yields</h3>
-      <p>Our models use a library of data to "accurately estimate your yields," as stated in our mission. This allows you to plan logistics, secure contracts, and manage your finances with a level of confidence that "gut feeling" can't provide.</p>
-
-      <h3>2. Recognize Pests and Diseases Early</h3>
-      <p>The AI model library is trained to "recognize signs of pests and diseases." This means your Agro App can alert you to a potential problem *before* it spreads, allowing you to deploy targeted solutions—like our wagon's precision spraying—instead of costly, broad-spectrum pesticides.</p>
-
-      <p>This is the core of "Professional Ag-Tech": giving you the data-driven tools you need to move from reacting to problems to proactively managing your farm.</p>
-    `
+    content: {
+      introduction: "How much yield will you get from Field B-North? Are those yellow spots on Block 3 a sign of pests or a simple nutrient deficiency? For most of agricultural history, the answer has been a 'best guess' based on experience, weather patterns, and a healthy amount of 'gut feeling.'",
+      keyInsight: {
+        title: "Data-Driven Intelligence",
+        text: "Our platform is designed to turn raw data into actionable intelligence. Experience is invaluable, but in a world of tight margins and climate volatility, guesswork is a liability we can no longer afford."
+      },
+      sectionOne: {
+        title: "Accurately Estimate Your Yields",
+        body: "Our 'AI Tool' isn't a black box. It works by combining data from your 'Agro App,' public weather data, and—crucially—observations from our autonomous wagons. As the wagons analyze fields on their routes, they're collecting visual data. Our models use this to count blossoms, assess fruit development, and 'accurately estimate your yields.' This allows you to plan logistics, secure contracts, and manage your finances with a level of confidence that was previously impossible."
+      },
+      sectionTwo: {
+        title: "Recognize Pests and Diseases Early",
+        body: "The same visual data feeds our 'model library to recognize signs of pests and diseases.' The AI is trained to spot the subtle leaf discoloration of a fungal infection or the specific damage pattern of a new pest. This means your Agro App can alert you to a *potential* problem in Block 3, Row 12, days before it's visible to the naked eye. This allows you to deploy a targeted solution—like our wagon's 'precision spraying'—instead of a costly, field-wide application."
+      },
+      conclusion: "This is the core of 'Professional Ag-Tech.' It's not about replacing the farmer's intuition, but augmenting it. We're giving you the data-driven tools you need to move from reacting to problems to proactively managing your farm's future."
+    }
   },
   {
     slug: 'farmer-first-business-model',
-    title: 'Why "Farmer-First" Isn\'t Just a Slogan, It\'s Our Business Model',
+    title: "Why 'Farmer-First' Isn't Just a Slogan, It's Our Business Model",
     tag: 'Sustainability',
-    excerpt: 'Technology can be complicated. Our "Farmer-First" value means we build tools that solve real problems, are easy to use, and are environmentally sustainable.',
-    imageUrl: 'https://placehold.co/400x250/FFB703/FFFFFF?text=Farmer-First',
+    excerpt: "Technology can be complicated. Our 'Farmer-First' value means we build tools that solve real problems, are easy to use, and are environmentally sustainable.",
+    imageUrl: '[https://placehold.co/400x250/FFB703/FFFFFF?text=Farmer-First](https://placehold.co/400x250/FFB703/FFFFFF?text=Farmer-First)',
     author: 'Ploomba Leadership',
     date: 'October 25, 2025',
-    content: `
-      <p>You'll see "Farmer-First" listed as one of our core values. To us, this isn't just a marketing buzzword. It's the guiding principle behind every decision we make.</p>
-      <p>Technology in agriculture is often confusing, expensive, or built without a clear understanding of the person who will be using it. The "Farmer-First" approach is our commitment to doing the opposite.</p>
-
-      <h2>What Does "Farmer-First" Mean in Practice?</h2>
-      
-      <h3>1. It Means Solving Real Problems.</h3>
-      <p>We're not interested in tech for tech's sake. We started Ploomba to solve concrete agricultural challenges: soil compaction, labor shortages, and yield uncertainty. Our autonomous wagon and AI platform are direct answers to these problems.</p>
-
-      <h3>2. It Means Usability.</h3>
-      <p>Our <strong>Agro App</strong> is the perfect example. It's designed to be your "personalized production journal." It's a tool for *you* to model production, manage your fields, and monitor your equipment—all from a single, intuitive interface. If you can't use it, we've failed.</p>
-
-      <h3>3. It Means Sustainability.</h3>
-      <p>A "Farmer-First" approach is inherently sustainable. Our electric wagons reduce on-farm emissions. Our precision spraying capabilities reduce chemical waste. By helping you do more with less, we're building a model that is both environmentally and economically sustainable for generations to come.</p>
-
-      <p>As our brochure states, "We are currently seeking partners to continue the development." This is an open invitation. We want to work *with* farmers to build the next generation of ag-tech. That is what "Farmer-First" means to us.</p>
-    `
+    content: {
+      introduction: "You'll see 'Farmer-First' listed as one of our core values. In the world of tech, it's easy for that to sound like a marketing buzzword. To us, it's the guiding principle behind every line of code we write and every piece of hardware we design. It's a commitment to building things that are not just innovative, but genuinely useful.",
+      keyInsight: {
+        title: "Technology in Practice",
+        text: "Technology in agriculture is often confusing, expensive, or built in a vacuum without a clear understanding of the person who will be using it. The 'Farmer-First' approach is our commitment to doing the opposite."
+      },
+      sectionOne: {
+        title: "Solving Real, Grounded Problems",
+        body: "We're not interested in 'tech for tech's sake.' We started Ploomba to solve concrete agricultural challenges we saw firsthand: crippling soil compaction from heavy machinery, persistent labor shortages during peak season, and the financial uncertainty of unpredictable yields. Our Autonomous Wagon, our Agro App, and our AI Platform are all direct answers to these specific, real-world problems."
+      },
+      sectionTwo: {
+        title: "Usability and Sustainability",
+        body: "Our 'Agro App' is the perfect example of this value in action. We designed it to be your 'personalized production journal'—a tool to 'model and estimate production' and 'manage your tech equipment' from one simple interface. If it's not intuitive, if it takes more time than it saves, we've failed. This approach is also inherently sustainable. Our electric wagons reduce on-farm emissions. Our precision spraying capabilities reduce chemical waste. By helping you do more with less, we're building a model that is both environmentally and economically sustainable."
+      },
+      conclusion: "As our brochure states, 'We are currently seeking partners to continue the development.' This is more than a sales pitch; it's an open invitation. We want to work *with* farmers to build the next generation of ag-tech. That is what 'Farmer-First' means to us."
+    }
   },
 ];
