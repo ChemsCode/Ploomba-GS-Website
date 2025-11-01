@@ -10,7 +10,7 @@ export default function AboutPage() {
   return (
     <main>
       {/* Header Section */}
-      <section className="bg-muted">
+      <section className="bg-muted pt-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
