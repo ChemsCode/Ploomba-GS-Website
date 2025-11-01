@@ -34,8 +34,7 @@ const MissionVision: React.FC<MissionVisionProps> = ({ className = '' }) => {
           {/* Left Column - Mission */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
             <p className="text-primary font-semibold uppercase text-sm tracking-wider mb-4">
@@ -54,8 +53,7 @@ const MissionVision: React.FC<MissionVisionProps> = ({ className = '' }) => {
           {/* Right Column - Values */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
           >
             <ul className="space-y-6">

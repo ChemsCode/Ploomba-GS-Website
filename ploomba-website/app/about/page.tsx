@@ -1,12 +1,16 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import MissionVision from '../../src/components/about/MissionVision';
 import FoundingStory from '../../src/components/about/FoundingStory';
 import TeamShowcase from '../../src/components/about/TeamShowcase';
 
 export default function AboutPage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <main>
       {/* Header Section */}

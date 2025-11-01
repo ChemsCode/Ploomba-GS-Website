@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import HardwareFeatures from '../../src/components/technology/HardwareFeatures';
 import SoftwareFeatures from '../../src/components/technology/SoftwareFeatures';
 import TechSpecs from '../../src/components/technology/TechSpecs';
@@ -8,6 +9,10 @@ import CallToAction from '../../src/components/CallToAction';
 import { motion } from 'framer-motion';
 
 export default function TechnologyPage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <main>
       <section className="bg-muted pt-20">
