@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Truck, Smartphone, BarChart3 } from 'lucide-react';
 
@@ -8,7 +9,6 @@ interface ServiceCardProps {
   icon: React.ReactNode;
   title: string;
   description: string;
-  onLearnMore?: () => void;
 }
 
 interface ServicesOverviewProps {
@@ -18,8 +18,7 @@ interface ServicesOverviewProps {
 const ServiceCard: React.FC<ServiceCardProps> = ({ 
   icon, 
   title, 
-  description, 
-  onLearnMore 
+  description
 }) => {
   const cardVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -47,12 +46,12 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       </p>
 
       {/* Learn More Link */}
-      <a
-        onClick={onLearnMore}
-        className="mt-4 font-medium text-primary transition-all group-hover:pl-1 cursor-pointer"
+      <Link
+        href="/technology"
+        className="mt-4 inline-block font-medium text-primary transition-all group-hover:pl-1"
       >
         Learn More &rarr;
-      </a>
+      </Link>
     </motion.div>
   );
 };
@@ -75,11 +74,6 @@ const ServicesOverview: React.FC<ServicesOverviewProps> = ({ className = '' }) =
       description: "Access AI models and graphical data to accurately estimate yields and detect issues before they spread.",
     },
   ];
-
-  const handleLearnMore = (serviceTitle: string) => {
-    // TODO: Implement navigation or modal functionality
-    console.log(`Learn more about ${serviceTitle}`);
-  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -116,7 +110,6 @@ const ServicesOverview: React.FC<ServicesOverviewProps> = ({ className = '' }) =
               icon={service.icon}
               title={service.title}
               description={service.description}
-              onLearnMore={() => handleLearnMore(service.title)}
             />
           ))}
         </motion.div>

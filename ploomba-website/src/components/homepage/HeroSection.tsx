@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 
@@ -63,14 +64,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className = '' }) => {
           {/* CTA Buttons */}
           <div className="mt-10 flex flex-wrap gap-4 items-center justify-center">
             {/* Primary CTA */}
-            <button className="bg-primary text-primary-foreground hover:bg-primary-hover px-6 py-3 rounded-md font-semibold transition-colors">
+            <Link href="/contact" className="bg-primary text-primary-foreground hover:bg-primary-hover px-6 py-3 rounded-md font-semibold transition-colors">
               Request a Demo
-            </button>
+            </Link>
 
             {/* Secondary CTA */}
-            <button className="bg-secondary text-secondary-foreground hover:bg-secondary/80 px-6 py-3 rounded-md font-semibold transition-colors">
+            <Link href="/technology" className="bg-secondary text-secondary-foreground hover:bg-secondary/80 px-6 py-3 rounded-md font-semibold transition-colors">
               Learn More
-            </button>
+            </Link>
           </div>
         </motion.div>
 
