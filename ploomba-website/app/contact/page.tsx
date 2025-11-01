@@ -18,7 +18,7 @@ const formSchema = z.object({
 type FormData = z.infer<typeof formSchema>;
 
 export default function ContactPage() {
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -33,12 +33,30 @@ export default function ContactPage() {
     resolver: zodResolver(formSchema),
   });
 
-  const onSubmit = (data: FormData) => {
-    console.log('Form submitted:', data);
-    // TODO: Implement actual form submission logic
-    setSubmitStatus('success');
-    reset();
-    setTimeout(() => setSubmitStatus('idle'), 3000);
+  const onSubmit = async (data: FormData) => {
+    setSubmitStatus('loading');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
+
+      setSubmitStatus('success');
+      reset();
+      setTimeout(() => setSubmitStatus('idle'), 5000);
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setSubmitStatus('error');
+      setTimeout(() => setSubmitStatus('idle'), 5000);
+    }
   };
 
   return (
@@ -198,12 +216,13 @@ export default function ContactPage() {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 rounded-md font-semibold transition-all duration-200 hover:shadow-lg"
+                  disabled={submitStatus === 'loading'}
+                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 rounded-md font-semibold transition-all duration-200 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Request a Demo
+                  {submitStatus === 'loading' ? 'Sending...' : 'Request a Demo'}
                 </button>
 
-                {/* Success Message */}
+                {/* Status Messages */}
                 {submitStatus === 'success' && (
                   <motion.p
                     initial={{ opacity: 0, y: -10 }}
@@ -211,6 +230,16 @@ export default function ContactPage() {
                     className="text-center text-green-600 font-medium"
                   >
                     Thank you! We&apos;ll be in touch soon.
+                  </motion.p>
+                )}
+                
+                {submitStatus === 'error' && (
+                  <motion.p
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="text-center text-destructive font-medium"
+                  >
+                    Something went wrong. Please try again.
                   </motion.p>
                 )}
               </form>
