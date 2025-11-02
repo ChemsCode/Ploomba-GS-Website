@@ -53,10 +53,10 @@ const FoundingStory: React.FC<FoundingStoryProps> = ({ className = '' }) => {
         {/* Timeline Container */}
         <div className="relative mt-12">
           {/* Vertical Line */}
-          <div className="absolute left-1/2 -translate-x-1/2 w-0.5 h-full bg-border hidden md:block" />
+          <div className="absolute left-1/2 -translate-x-1/2 w-0.5 h-full bg-primary/30 hidden md:block" />
 
           {/* Mobile Vertical Line */}
-          <div className="absolute left-4 w-0.5 h-full bg-border md:hidden" />
+          <div className="absolute left-4 w-0.5 h-full bg-primary/30 md:hidden" />
 
           {/* Timeline Items */}
           <div className="space-y-12">

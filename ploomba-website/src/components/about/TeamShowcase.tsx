@@ -20,31 +20,24 @@ const TeamShowcase: React.FC<TeamShowcaseProps> = ({ className = '' }) => {
   const teamMembers: TeamMember[] = [
     {
       id: 1,
-      name: "Jane Doe",
-      role: "Co-Founder & CEO",
+      name: "Andrew Kappert",
+      role: "Co-Founder",
       bio: "Visionary leader with 15+ years in agricultural technology, passionate about sustainable farming solutions and innovation.",
-      image: "https://placehold.co/400x400/2B3036/FFFFFF?text=Jane+Doe"
+      image: "/andrew_kappert.jpg"
     },
     {
       id: 2,
-      name: "John Smith",
-      role: "CTO & Co-Founder",
+      name: "Caleb Kaufmann",
+      role: "Co-Founder",
       bio: "Robotics expert specializing in autonomous systems, bringing cutting-edge AI and engineering expertise to agricultural automation.",
-      image: "https://placehold.co/400x400/2B3036/FFFFFF?text=John+Smith"
+      image: "/caleb_kaufmann.jpg"
     },
     {
       id: 3,
-      name: "Sarah Johnson",
-      role: "Head of Product",
+      name: "Nicolas Fortin",
+      role: "Co-Founder",
       bio: "Product strategist with deep roots in agriculture, dedicated to creating farmer-first technology that solves real-world challenges.",
-      image: "https://placehold.co/400x400/2B3036/FFFFFF?text=Sarah+Johnson"
-    },
-    {
-      id: 4,
-      name: "Michael Chen",
-      role: "Lead Engineer",
-      bio: "Software architect and machine learning specialist, designing intelligent systems that optimize agricultural operations.",
-      image: "https://placehold.co/400x400/2B3036/FFFFFF?text=Michael+Chen"
+      image: "/nicolas_fortin.jpg"
     }
   ];
 
