@@ -14,27 +14,27 @@ const SocialProof: React.FC<SocialProofProps> = ({ className = '' }) => {
     {
       id: 1,
       name: 'Partner 1',
-      logo: 'https://placehold.co/150x60/FFFFFF/CCCCCC?text=Partner'
+      logo: '/Ploomba_Logo_Without_Text.svg'
     },
     {
       id: 2,
       name: 'Partner 2',
-      logo: 'https://placehold.co/150x60/FFFFFF/CCCCCC?text=Partner'
+      logo: '/Ploomba_Logo_Without_Text.svg'
     },
     {
       id: 3,
       name: 'Partner 3',
-      logo: 'https://placehold.co/150x60/FFFFFF/CCCCCC?text=Partner'
+      logo: '/Ploomba_Logo_Without_Text.svg'
     },
     {
       id: 4,
       name: 'Partner 4',
-      logo: 'https://placehold.co/150x60/FFFFFF/CCCCCC?text=Partner'
+      logo: '/Ploomba_Logo_Without_Text.svg'
     },
     {
       id: 5,
       name: 'Partner 5',
-      logo: 'https://placehold.co/150x60/FFFFFF/CCCCCC?text=Partner'
+      logo: '/Ploomba_Logo_Without_Text.svg'
     },
   ];
 
@@ -73,13 +73,13 @@ const SocialProof: React.FC<SocialProofProps> = ({ className = '' }) => {
           {/* Logo Grid */}
           <div className="mt-8 grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-5">
             {partnerLogos.map((partner) => (
-              <div key={partner.id} className="col-span-1">
+              <div key={partner.id} className="col-span-1 flex items-center justify-center">
                 <Image
                   src={partner.logo}
                   alt={`${partner.name} logo`}
-                  width={150}
+                  width={60}
                   height={60}
-                  className="col-span-1 filter grayscale opacity-60 transition duration-300 hover:grayscale-0 hover:opacity-100"
+                  className="w-12 h-12 md:w-16 md:h-16 filter grayscale opacity-80 transition duration-300 hover:grayscale-0 hover:opacity-100"
                 />
               </div>
             ))}

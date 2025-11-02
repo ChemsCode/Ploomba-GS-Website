@@ -36,7 +36,7 @@ export const allPosts: Post[] = [
     title: 'Rethinking Fieldwork: How Lightweight Autonomy Solves Soil Compaction',
     tag: 'Technology',
     excerpt: 'Heavy machinery compacts your soil, strangling yields. Our autonomous wagon is designed to be lightweight and intelligent, solving this problem.',
-    imageUrl: '[https://placehold.co/400x250/D90429/FFFFFF?text=Ploomba+Wagon+in+Field](https://placehold.co/400x250/D90429/FFFFFF?text=Ploomba+Wagon+in+Field)',
+    imageUrl: '/ploomba_in_field_1.png',
     author: 'Ploomba Engineering Team',
     date: 'November 1, 2025',
     content: {
@@ -61,7 +61,7 @@ export const allPosts: Post[] = [
     title: 'From Guesswork to Data-Driven Decisions: Using AI to Predict Yields',
     tag: 'Innovation',
     excerpt: 'Stop reacting to problems. Our Analysis Platform uses AI to help you recognize signs of pests and accurately estimate your yields months before harvest.',
-    imageUrl: '[https://placehold.co/400x250/2B3036/FFFFFF?text=Ploomba+AI+Platform](https://placehold.co/400x250/2B3036/FFFFFF?text=Ploomba+AI+Platform)',
+    imageUrl: '/ai_model_straweberries.png',
     author: 'Dr. Jane Smith, Head of Data Science',
     date: 'October 28, 2025',
     content: {
@@ -86,7 +86,7 @@ export const allPosts: Post[] = [
     title: "Why 'Farmer-First' Isn't Just a Slogan, It's Our Business Model",
     tag: 'Sustainability',
     excerpt: "Technology can be complicated. Our 'Farmer-First' value means we build tools that solve real problems, are easy to use, and are environmentally sustainable.",
-    imageUrl: '[https://placehold.co/400x250/FFB703/FFFFFF?text=Farmer-First](https://placehold.co/400x250/FFB703/FFFFFF?text=Farmer-First)',
+    imageUrl: '/ploomba_in_field_2.png',
     author: 'Ploomba Leadership',
     date: 'October 25, 2025',
     content: {
