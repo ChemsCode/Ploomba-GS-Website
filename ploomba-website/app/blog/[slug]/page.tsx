@@ -4,6 +4,7 @@
 import { allPosts } from '../../../src/data/mock-posts';
 import { notFound, useParams } from 'next/navigation';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import PostCard from '../../../src/components/blog/PostCard';
 
 // Helper function to animate variants
@@ -58,10 +59,11 @@ export default function PostPage() {
         transition={{ duration: 0.7, delay: 0.2 }}
       >
         <div className="relative w-full max-w-5xl mx-auto h-64 md:h-96 px-4">
-          <img
+          <Image
             src={post.imageUrl}
             alt={post.title}
-            className="w-full h-full object-cover rounded-lg shadow-lg"
+            fill
+            className="object-cover rounded-lg shadow-lg"
           />
         </div>
       </motion.div>

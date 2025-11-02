@@ -12,34 +12,28 @@ interface HeroSectionProps {
 const HeroSection: React.FC<HeroSectionProps> = ({ className = '' }) => {
   return (
     <section className={`relative h-screen w-full overflow-hidden ${className}`}>
-      {/* Background Video - Hidden on mobile */}
-      <div className="absolute inset-0 hidden md:block">
+      {/* Background Video - All devices */}
+      <div className="absolute inset-0">
         <video
-          className="absolute top-0 left-0 min-w-full min-h-full object-cover z-0"
           autoPlay
-          muted
           loop
+          muted
           playsInline
-          preload="metadata"
+          poster="/ploomba_in_field_2.png"
+          className="absolute left-0 top-0 z-0 h-full w-full object-cover brightness-90 contrast-110 saturate-110"
         >
-          <source
-            src="https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/1080/Big_Buck_Bunny_1080_10s_1MB.mp4"
-            type="video/mp4"
-          />
+          {/* --- 1. WebM (Primary) --- */}
+          <source src="/ploomba_hero.webm" type="video/webm" />
+          
+          {/* --- 2. MP4 (Fallback) --- */}
+          <source src="/ploomba_hero.mp4" type="video/mp4" />
+          
           Your browser does not support the video tag.
         </video>
       </div>
 
-      {/* Fallback Background Image - Visible on mobile */}
-      <div 
-        className="absolute inset-0 md:hidden bg-cover bg-center bg-no-repeat z-0"
-        style={{
-          backgroundImage: 'url(https://placehold.co/600x800/2B3036/FFFFFF?text=Ploomba+Robot)'
-        }}
-      />
-
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/60 z-10" />
+      {/* Dark Gradient Overlay - Clean and Cinematic */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/50 z-10" />
 
       {/* Main Content */}
       <div className="relative z-20 flex h-full flex-col items-center justify-center text-center text-white p-8">
