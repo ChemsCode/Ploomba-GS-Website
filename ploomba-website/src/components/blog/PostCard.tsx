@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 
 interface PostCardProps {
@@ -20,9 +21,11 @@ export default function PostCard({ post }: PostCardProps) {
         href={`/blog/${post.slug}`}
         className="group flex flex-col h-full overflow-hidden rounded-lg border border-border bg-card transition-all duration-300 hover:shadow-lg"
       >
-        <img
+        <Image
           src={post.imageUrl}
           alt={post.title}
+          width={600}
+          height={400}
           className="h-48 w-full object-cover"
         />
         <div className="flex flex-1 flex-col justify-between p-6">
