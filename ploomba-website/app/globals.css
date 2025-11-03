@@ -51,6 +51,8 @@
   --color-success-foreground: hsl(var(--success-foreground));
   --color-warning: hsl(var(--warning));
   --color-warning-foreground: hsl(var(--warning-foreground));
+  --color-footer: hsl(var(--footer));
+  --color-footer-foreground: hsl(var(--footer-foreground));
   
   /* Ploomba brand colors */
   --color-pl-red: hsl(var(--pl-red));
@@ -114,6 +116,13 @@
     --success-foreground: var(--pl-white);   /* Text on success backgrounds */
     --warning: var(--pl-accent);             /* Warning messages, alerts */
     --warning-foreground: var(--pl-black);   /* Text on warning backgrounds */
+    
+    /* 
+     * FOOTER COLORS
+     * Footer uses same color as secondary and stays consistent in dark mode
+     */
+    --footer: var(--pl-black);              /* Footer background - stays same in dark mode */
+    --footer-foreground: var(--pl-white);   /* Text on footer background */
   }
 
   .dark {
@@ -149,6 +158,10 @@
     --success-foreground: var(--pl-white);
     --warning: var(--pl-accent);
     --warning-foreground: var(--pl-black);
+    
+    /* Footer colors stay the same in dark mode */
+    --footer: var(--pl-black);              /* Footer background - same as light mode */
+    --footer-foreground: var(--pl-white);   /* Text on footer background */
   }
 }
 

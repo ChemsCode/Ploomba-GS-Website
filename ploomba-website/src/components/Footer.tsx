@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-secondary text-secondary-foreground">
+    <footer className="bg-footer text-footer-foreground border-t border-red-600">
       <div className="max-w-7xl mx-auto p-8 md:p-12">
         {/* Main Grid */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
                 className="h-8 w-auto hidden dark:block"
               />
             </div>
-            <p className="text-sm text-secondary-foreground/80">
+            <p className="text-sm text-footer-foreground/80">
               Revolutionizing agriculture with autonomous robots and AI-driven analytics. 
               Helping farmers optimize yields and reduce soil compaction for sustainable farming.
             </p>
@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors"
+                    className="text-sm text-footer-foreground/80 hover:text-primary transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -65,7 +65,7 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
             <div className="space-y-2">
-              <p className="text-sm text-secondary-foreground/80">
+              <p className="text-sm text-footer-foreground/80">
                 <a
                   href="mailto:info@ploomba.com"
                   className="hover:text-primary transition-colors"
@@ -73,7 +73,7 @@ const Footer: React.FC = () => {
                   info@ploomba.com
                 </a>
               </p>
-              <p className="text-sm text-secondary-foreground/80">
+              <p className="text-sm text-footer-foreground/80">
                 +1 (555) 123-4567
               </p>
             </div>
@@ -87,7 +87,7 @@ const Footer: React.FC = () => {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-sm text-secondary-foreground/80 hover:text-primary transition-colors"
+                    className="text-sm text-footer-foreground/80 hover:text-primary transition-colors"
                   >
                     {link.label}
                   </a>
@@ -98,7 +98,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar - Copyright */}
-        <div className="mt-8 border-t border-secondary-foreground/20 pt-8 flex justify-between items-center text-sm text-secondary-foreground/60">
+        <div className="mt-8 border-t border-footer-foreground/20 pt-8 flex justify-between items-center text-sm text-footer-foreground/60">
           <span>© 2025 Ploomba Inc. All rights reserved.</span>
           <div className="flex gap-6">
             <Link
