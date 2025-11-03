@@ -1,23 +1,24 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function UseCases() {
   const useCases = [
     {
       title: 'Harvest Transport',
       description: 'Transports fruits and vegetables for the picker.',
-      imageText: 'Harvest+Transport',
+      image: '/ai_model_straweberries.png',
     },
     {
       title: 'Precision Spraying',
       description: 'Precisely sprays phytosanitary products.',
-      imageText: 'Precision+Spraying',
+      image: '/ploomba_in_field_1.png',
     },
     {
       title: 'Field Analysis',
       description: 'Analyzes fields as it passes to detect issues.',
-      imageText: 'Field+Analysis',
+      image: '/field_map.png',
     },
   ];
 
@@ -62,9 +63,11 @@ export default function UseCases() {
               variants={itemVariants}
               className="overflow-hidden rounded-lg shadow-lg bg-card"
             >
-              <img
-                src={`https://placehold.co/400x300/2B3036/FFFFFF?text=${useCase.imageText}`}
+              <Image
+                src={useCase.image}
                 alt={useCase.title}
+                width={800}
+                height={600}
                 className="w-full h-60 object-cover"
               />
               <div className="p-4">

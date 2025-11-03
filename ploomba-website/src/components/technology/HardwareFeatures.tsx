@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Truck, Scan, Shield, SprayCan, Bot } from 'lucide-react';
+import Image from 'next/image';
 
 export default function HardwareFeatures() {
   const features = [
@@ -37,9 +38,11 @@ export default function HardwareFeatures() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <img
-              src="https://placehold.co/600x600/2B3036/FFFFFF?text=Autonomous+Wagon"
+            <Image
+              src="/ploomba_in_field_1.png"
               alt="Autonomous Wagon"
+              width={800}
+              height={600}
               className="rounded-lg shadow-lg w-full"
             />
           </motion.div>
