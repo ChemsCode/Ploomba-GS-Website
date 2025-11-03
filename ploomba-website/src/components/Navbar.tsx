@@ -61,7 +61,8 @@ const Navbar: React.FC = () => {
                   alt="Ploomba" 
                   width={120}
                   height={32}
-                  className="h-8 w-auto"
+                  style={{ height: '32px', width: 'auto' }}
+                  className="h-8"
                 />
               ) : (
                 <Image 
@@ -69,7 +70,8 @@ const Navbar: React.FC = () => {
                   alt="Ploomba" 
                   width={120}
                   height={32}
-                  className="h-8 w-auto"
+                  style={{ height: '32px', width: 'auto' }}
+                  className="h-8"
                 />
               )}
             </Link>
@@ -137,7 +139,8 @@ const Navbar: React.FC = () => {
                       alt="Ploomba" 
                       width={120}
                       height={32}
-                      className="h-8 w-auto"
+                      style={{ height: '32px', width: 'auto' }}
+                      className="h-8"
                     />
                   ) : (
                     <Image 
@@ -145,7 +148,8 @@ const Navbar: React.FC = () => {
                       alt="Ploomba" 
                       width={120}
                       height={32}
-                      className="h-8 w-auto"
+                      style={{ height: '32px', width: 'auto' }}
+                      className="h-8"
                     />
                   )}
                 </Link>
