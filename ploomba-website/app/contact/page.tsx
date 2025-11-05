@@ -6,6 +6,7 @@ import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin } from 'lucide-react';
+import { InlineWidget } from 'react-calendly';
 
 // Form validation schema
 const formSchema = z.object({
@@ -19,6 +20,7 @@ type FormData = z.infer<typeof formSchema>;
 
 export default function ContactPage() {
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [activeTab, setActiveTab] = useState<'form' | 'calendar'>('form');
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -87,7 +89,7 @@ export default function ContactPage() {
                 Contact Details
               </h2>
               <p className="text-muted-foreground text-lg mb-8">
-                You can reach us directly or fill out the form, and we&apos;ll get back to you.
+                Get in touch with us by filling out the contact form, scheduling a call on our calendar, or reaching out directly via email or phone.
               </p>
 
               <ul className="space-y-6">
@@ -135,114 +137,169 @@ export default function ContactPage() {
               </ul>
             </motion.div>
 
-            {/* Right Column - Contact Form */}
+            {/* Right Column - Tabbed Interface */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <form
-                onSubmit={handleSubmit(onSubmit)}
-                className="space-y-6 bg-card p-8 rounded-lg border border-border shadow-md"
-              >
-                {/* Name Field */}
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                    Name *
-                  </label>
-                  <input
-                    id="name"
-                    type="text"
-                    {...register('name')}
-                    className="w-full px-4 py-3 bg-background border border-border rounded-md text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
-                    placeholder="Your name"
-                  />
-                  {errors.name && (
-                    <p className="mt-1 text-sm text-destructive">{errors.name.message}</p>
-                  )}
-                </div>
-
-                {/* Email Field */}
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                    Email *
-                  </label>
-                  <input
-                    id="email"
-                    type="email"
-                    {...register('email')}
-                    className="w-full px-4 py-3 bg-background border border-border rounded-md text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
-                    placeholder="your.email@example.com"
-                  />
-                  {errors.email && (
-                    <p className="mt-1 text-sm text-destructive">{errors.email.message}</p>
-                  )}
-                </div>
-
-                {/* Company Field */}
-                <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
-                    Company
-                  </label>
-                  <input
-                    id="company"
-                    type="text"
-                    {...register('company')}
-                    className="w-full px-4 py-3 bg-background border border-border rounded-md text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
-                    placeholder="Your company (optional)"
-                  />
-                  {errors.company && (
-                    <p className="mt-1 text-sm text-destructive">{errors.company.message}</p>
-                  )}
-                </div>
-
-                {/* Message Field */}
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                    Message *
-                  </label>
-                  <textarea
-                    id="message"
-                    {...register('message')}
-                    rows={5}
-                    className="w-full px-4 py-3 bg-background border border-border rounded-md text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-colors resize-none"
-                    placeholder="Tell us about your project..."
-                  />
-                  {errors.message && (
-                    <p className="mt-1 text-sm text-destructive">{errors.message.message}</p>
-                  )}
-                </div>
-
-                {/* Submit Button */}
-                <button
-                  type="submit"
-                  disabled={submitStatus === 'loading'}
-                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 rounded-md font-semibold transition-all duration-200 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {submitStatus === 'loading' ? 'Sending...' : 'Contact Us'}
-                </button>
-
-                {/* Status Messages */}
-                {submitStatus === 'success' && (
-                  <motion.p
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="text-center text-green-600 font-medium"
+              <div className="bg-card rounded-lg border border-border shadow-md overflow-hidden">
+                {/* Tab Navigation */}
+                <div className="flex border-b border-border">
+                  <button
+                    onClick={() => setActiveTab('form')}
+                    className={`flex-1 px-6 py-4 text-sm font-semibold transition-colors ${
+                      activeTab === 'form'
+                        ? 'bg-background text-foreground border-b-2 border-primary'
+                        : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'
+                    }`}
                   >
-                    Thank you! We&apos;ll be in touch soon.
-                  </motion.p>
-                )}
-                
-                {submitStatus === 'error' && (
-                  <motion.p
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="text-center text-destructive font-medium"
+                    Contact Form
+                  </button>
+                  <button
+                    onClick={() => setActiveTab('calendar')}
+                    className={`flex-1 px-6 py-4 text-sm font-semibold transition-colors ${
+                      activeTab === 'calendar'
+                        ? 'bg-background text-foreground border-b-2 border-primary'
+                        : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'
+                    }`}
                   >
-                    Something went wrong. Please try again.
-                  </motion.p>
-                )}
-              </form>
+                    Schedule Call
+                  </button>
+                </div>
+
+                {/* Tab Content */}
+                <div className="p-8">
+                  {/* Contact Form Tab */}
+                  {activeTab === 'form' && (
+                    <motion.form
+                      key="form"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3 }}
+                      onSubmit={handleSubmit(onSubmit)}
+                      className="space-y-6"
+                    >
+                      {/* Name Field */}
+                      <div>
+                        <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                          Name *
+                        </label>
+                        <input
+                          id="name"
+                          type="text"
+                          {...register('name')}
+                          className="w-full px-4 py-3 bg-background border border-border rounded-md text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
+                          placeholder="Your name"
+                        />
+                        {errors.name && (
+                          <p className="mt-1 text-sm text-destructive">{errors.name.message}</p>
+                        )}
+                      </div>
+
+                      {/* Email Field */}
+                      <div>
+                        <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                          Email *
+                        </label>
+                        <input
+                          id="email"
+                          type="email"
+                          {...register('email')}
+                          className="w-full px-4 py-3 bg-background border border-border rounded-md text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
+                          placeholder="your.email@example.com"
+                        />
+                        {errors.email && (
+                          <p className="mt-1 text-sm text-destructive">{errors.email.message}</p>
+                        )}
+                      </div>
+
+                      {/* Company Field */}
+                      <div>
+                        <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
+                          Company
+                        </label>
+                        <input
+                          id="company"
+                          type="text"
+                          {...register('company')}
+                          className="w-full px-4 py-3 bg-background border border-border rounded-md text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
+                          placeholder="Your company (optional)"
+                        />
+                        {errors.company && (
+                          <p className="mt-1 text-sm text-destructive">{errors.company.message}</p>
+                        )}
+                      </div>
+
+                      {/* Message Field */}
+                      <div>
+                        <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                          Message *
+                        </label>
+                        <textarea
+                          id="message"
+                          {...register('message')}
+                          rows={5}
+                          className="w-full px-4 py-3 bg-background border border-border rounded-md text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-colors resize-none"
+                          placeholder="Tell us about your project..."
+                        />
+                        {errors.message && (
+                          <p className="mt-1 text-sm text-destructive">{errors.message.message}</p>
+                        )}
+                      </div>
+
+                      {/* Submit Button */}
+                      <button
+                        type="submit"
+                        disabled={submitStatus === 'loading'}
+                        className="w-full bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 rounded-md font-semibold transition-all duration-200 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        {submitStatus === 'loading' ? 'Sending...' : 'Send Message'}
+                      </button>
+
+                      {/* Status Messages */}
+                      {submitStatus === 'success' && (
+                        <motion.p
+                          initial={{ opacity: 0, y: -10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          className="text-center text-green-600 font-medium"
+                        >
+                          Thank you! We&apos;ll be in touch soon.
+                        </motion.p>
+                      )}
+                      
+                      {submitStatus === 'error' && (
+                        <motion.p
+                          initial={{ opacity: 0, y: -10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          className="text-center text-destructive font-medium"
+                        >
+                          Something went wrong. Please try again.
+                        </motion.p>
+                      )}
+                    </motion.form>
+                  )}
+
+                  {/* Calendly Tab */}
+                  {activeTab === 'calendar' && (
+                    <motion.div
+                      key="calendar"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="-m-8"
+                    >
+                      <InlineWidget
+                        url="https://calendly.com/ploomba-demo/30min"
+                        styles={{
+                          height: '700px',
+                          width: '100%',
+                        }}
+                      />
+                    </motion.div>
+                  )}
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
