@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { Linkedin } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const navLinks = [
@@ -10,9 +11,7 @@ const Footer: React.FC = () => {
   ];
 
   const socialLinks = [
-    { href: '#', label: 'LinkedIn' },
-    { href: '#', label: 'Twitter' },
-    { href: '#', label: 'YouTube' }
+    { href: 'https://www.linkedin.com/company/ploomba/?originalSubdomain=ca', label: 'LinkedIn', icon: Linkedin }
   ];
 
   return (
@@ -83,16 +82,20 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Follow Us</h4>
             <ul className="space-y-2">
-              {socialLinks.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-footer-foreground/80 hover:text-primary transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
+              {socialLinks.map((link) => {
+                const Icon = link.icon;
+                return (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      className="flex items-center gap-2 text-sm text-footer-foreground/80 hover:text-primary transition-colors"
+                    >
+                      <Icon className="h-5 w-5" />
+                      {link.label}
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>
