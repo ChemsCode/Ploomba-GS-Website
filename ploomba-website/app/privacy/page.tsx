@@ -79,7 +79,7 @@ export default function PrivacyPolicyPage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-primary mt-1">•</span>
-                  <span><strong className="text-foreground">Demo Requests:</strong> Information you provide when requesting a product demonstration</span>
+                  <span><strong className="text-foreground">Contact Inquiries:</strong> Information you provide when requesting information or contacting us</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-primary mt-1">•</span>
@@ -128,7 +128,7 @@ export default function PrivacyPolicyPage() {
             <div className="grid md:grid-cols-2 gap-4">
               <div className="p-4 bg-muted/50 rounded-lg">
                 <h4 className="font-semibold text-foreground mb-2">Communication</h4>
-                <p className="text-sm text-muted-foreground">Respond to your inquiries, demo requests, and provide customer support</p>
+                <p className="text-sm text-muted-foreground">Respond to your inquiries, contact requests, and provide customer support</p>
               </div>
               <div className="p-4 bg-muted/50 rounded-lg">
                 <h4 className="font-semibold text-foreground mb-2">Service Delivery</h4>

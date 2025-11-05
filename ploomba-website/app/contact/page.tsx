@@ -219,7 +219,7 @@ export default function ContactPage() {
                   disabled={submitStatus === 'loading'}
                   className="w-full bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 rounded-md font-semibold transition-all duration-200 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {submitStatus === 'loading' ? 'Sending...' : 'Request a Demo'}
+                  {submitStatus === 'loading' ? 'Sending...' : 'Contact Us'}
                 </button>
 
                 {/* Status Messages */}

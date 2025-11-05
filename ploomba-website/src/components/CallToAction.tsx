@@ -18,14 +18,14 @@ export default function CallToAction() {
             Ready to Modernize Your Farm?
           </h2>
           <p className="text-primary-foreground/90 text-lg mb-8">
-            Request a demo to see the Ploomba platform in action and get a
+            Contact us to learn more about the Ploomba platform and get a
             custom quote.
           </p>
           <Link
             href="/contact"
             className="mt-8 inline-flex bg-background text-foreground hover:bg-background/90 px-6 py-3 rounded-md font-semibold transition-colors"
           >
-            Request a Demo
+            Contact Us
           </Link>
         </motion.div>
       </div>

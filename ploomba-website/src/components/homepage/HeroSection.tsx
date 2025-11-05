@@ -59,7 +59,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className = '' }) => {
           <div className="mt-10 flex flex-wrap gap-4 items-center justify-center">
             {/* Primary CTA */}
             <Link href="/contact" className="bg-primary text-primary-foreground hover:bg-primary-hover px-6 py-3 rounded-md font-semibold transition-colors">
-              Request a Demo
+              Contact Us
             </Link>
 
             {/* Secondary CTA */}

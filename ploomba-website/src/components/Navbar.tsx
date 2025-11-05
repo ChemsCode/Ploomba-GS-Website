@@ -97,7 +97,7 @@ const Navbar: React.FC = () => {
                 href="/contact"
                 className="bg-primary text-primary-foreground hover:bg-primary-hover px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-200 hover:shadow-lg hover:scale-105"
               >
-                Request a Demo
+                Contact Us
               </Link>
             </div>
 
@@ -194,7 +194,7 @@ const Navbar: React.FC = () => {
                       className="bg-primary text-primary-foreground hover:bg-primary-hover px-6 py-3 rounded-full font-bold transition-all duration-200 hover:shadow-lg"
                       onClick={() => setIsOpen(false)}
                     >
-                      Request a Demo
+                      Contact Us
                     </Link>
                   </div>
                 </motion.div>

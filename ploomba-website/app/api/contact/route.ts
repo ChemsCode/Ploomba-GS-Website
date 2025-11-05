@@ -34,11 +34,11 @@ export async function POST(request: Request) {
 
     // 2. Send the email
     const { data, error } = await resend.emails.send({
-      from: 'Ploomba Demo Request <onboarding@resend.dev>', // Change this to your verified domain
+      from: 'Ploomba Contact Form <onboarding@resend.dev>', // Change this to your verified domain
       to: 'grffnstudios@gmail.com', // For testing - change to your verified domain email in production
       replyTo: email, // Set the reply-to as the user's email
-      subject: `New Demo Request from ${name}${company ? ` at ${company}` : ''}`,
-      html: `<p>You received a new demo request:</p>
+      subject: `New Contact Request from ${name}${company ? ` at ${company}` : ''}`,
+      html: `<p>You received a new contact request:</p>
              <p><strong>Name:</strong> ${name}</p>
              <p><strong>Email:</strong> ${email}</p>
              <p><strong>Company:</strong> ${company || 'Not provided'}</p>
