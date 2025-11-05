@@ -13,28 +13,8 @@ const SocialProof: React.FC<SocialProofProps> = ({ className = '' }) => {
   const partnerLogos = [
     {
       id: 1,
-      name: 'Partner 1',
-      logo: '/Ploomba_Logo_Without_Text.svg'
-    },
-    {
-      id: 2,
-      name: 'Partner 2',
-      logo: '/Ploomba_Logo_Without_Text.svg'
-    },
-    {
-      id: 3,
-      name: 'Partner 3',
-      logo: '/Ploomba_Logo_Without_Text.svg'
-    },
-    {
-      id: 4,
-      name: 'Partner 4',
-      logo: '/Ploomba_Logo_Without_Text.svg'
-    },
-    {
-      id: 5,
-      name: 'Partner 5',
-      logo: '/Ploomba_Logo_Without_Text.svg'
+      name: 'Université Concordia',
+      logo: '/Université_Concordia_(logo).svg'
     },
   ];
 
@@ -54,12 +34,12 @@ const SocialProof: React.FC<SocialProofProps> = ({ className = '' }) => {
           {/* Quote */}
           <blockquote className="mt-6 max-w-3xl mx-auto text-2xl font-medium text-foreground md:text-3xl">
             {/* cspell:disable-next-line */}
-            &ldquo;Ploomba&apos;s technology has transformed our harvesting process. The autonomous wagon is reliable, and the data has saved us thousands.&rdquo;
+            &ldquo;Ploomba represents the future of agricultural innovation. Their commitment to developing cutting-edge autonomous solutions aligns perfectly with our vision for sustainable farming practices and technological advancement.&rdquo;
           </blockquote>
           
           {/* Attribution */}
           <figcaption className="mt-6 text-base text-muted-foreground">
-            — John Farmer, XYZ Farms
+            — Dr. Mourad Debbabi, Associate Dean, Université Concordia
           </figcaption>
         </motion.figure>
 
@@ -71,15 +51,15 @@ const SocialProof: React.FC<SocialProofProps> = ({ className = '' }) => {
           </h3>
           
           {/* Logo Grid */}
-          <div className="mt-8 grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-5">
+          <div className="mt-8 flex justify-center">
             {partnerLogos.map((partner) => (
-              <div key={partner.id} className="col-span-1 flex items-center justify-center">
+              <div key={partner.id} className="flex items-center justify-center">
                 <Image
                   src={partner.logo}
                   alt={`${partner.name} logo`}
-                  width={60}
-                  height={60}
-                  className="w-12 h-12 md:w-16 md:h-16 filter grayscale opacity-80 transition duration-300 hover:grayscale-0 hover:opacity-100"
+                  width={200}
+                  height={80}
+                  className="h-20 w-auto filter grayscale opacity-80 transition duration-300 hover:grayscale-0 hover:opacity-100"
                 />
               </div>
             ))}
