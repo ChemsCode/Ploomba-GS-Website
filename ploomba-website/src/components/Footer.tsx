@@ -101,19 +101,14 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar - Copyright */}
-        <div className="mt-8 border-t border-footer-foreground/20 pt-8 flex justify-between items-center text-sm text-footer-foreground/60">
+        <div className="mt-8 border-t border-footer-foreground/20 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-footer-foreground/60">
           <span>© 2025 Ploomba Inc. All rights reserved.</span>
-          <div className="flex gap-6">
-            <Link
-              href="/privacy"
-              className="hover:text-primary transition-colors"
-            >
+          
+          <div className="flex gap-4 mt-4 md:mt-0">
+            <Link href="/privacy" className="transition-colors hover:text-footer-foreground">
               Privacy Policy
             </Link>
-            <Link
-              href="/terms"
-              className="hover:text-primary transition-colors"
-            >
+            <Link href="/tos" className="transition-colors hover:text-footer-foreground">
               Terms of Service
             </Link>
           </div>
