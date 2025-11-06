@@ -5,7 +5,8 @@ import { Linkedin } from 'lucide-react';
 const Footer: React.FC = () => {
   const navLinks = [
     { href: '/about', label: 'About' },
-    { href: '/technology', label: 'Technology' },
+    { href: '/technology/hardware', label: 'Hardware' },
+    { href: '/technology/software', label: 'Software' },
     { href: '/blog', label: 'Blog' },
     { href: '/contact', label: 'Contact' }
   ];

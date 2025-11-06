@@ -4,7 +4,8 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import ThemeToggle from './ThemeToggle';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu as HeadlessMenu } from '@headlessui/react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../app/theme-context';
 
@@ -25,7 +26,6 @@ const Navbar: React.FC = () => {
 
   const navLinks = [
     { href: '/about', label: 'About' },
-    { href: '/technology', label: 'Technology' },
     { href: '/blog', label: 'Blog' },
     { href: '/contact', label: 'Contact' }
   ];
@@ -54,7 +54,7 @@ const Navbar: React.FC = () => {
         `}>
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="flex-shrink-0">
+            <Link href="/" className="shrink-0">
               {theme === 'light' ? (
                 <Image 
                   src="/Ploomba_Logo_With_Text_Black_Text.svg" 
@@ -88,6 +88,44 @@ const Navbar: React.FC = () => {
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
                 </Link>
               ))}
+              
+              {/* Technology Dropdown */}
+              <HeadlessMenu as="div" className="relative">
+                <HeadlessMenu.Button className="flex items-center gap-1 text-base font-semibold text-muted-foreground hover:text-foreground transition-colors duration-200 relative group">
+                  Technology
+                  <ChevronDown className="h-4 w-4" />
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
+                </HeadlessMenu.Button>
+                
+                <HeadlessMenu.Items className="absolute right-0 mt-2 w-48 origin-top-right bg-card border border-border rounded-md shadow-lg focus:outline-none z-50">
+                  <div className="py-1">
+                    <HeadlessMenu.Item>
+                      {({ active }) => (
+                        <Link
+                          href="/technology/software"
+                          className={`block px-4 py-2 text-sm ${
+                            active ? 'bg-muted text-foreground' : 'text-muted-foreground'
+                          } transition-colors`}
+                        >
+                          Software
+                        </Link>
+                      )}
+                    </HeadlessMenu.Item>
+                    <HeadlessMenu.Item>
+                      {({ active }) => (
+                        <Link
+                          href="/technology/hardware"
+                          className={`block px-4 py-2 text-sm ${
+                            active ? 'bg-muted text-foreground' : 'text-muted-foreground'
+                          } transition-colors`}
+                        >
+                          Hardware
+                        </Link>
+                      )}
+                    </HeadlessMenu.Item>
+                  </div>
+                </HeadlessMenu.Items>
+              </HeadlessMenu>
             </nav>
 
             {/* Desktop Actions */}
@@ -181,10 +219,39 @@ const Navbar: React.FC = () => {
                   </motion.div>
                 ))}
                 
+                {/* Technology Links */}
                 <motion.div
                   initial={{ x: -20, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
-                  transition={{ duration: 0.3, delay: 0.5 }}
+                  transition={{ duration: 0.3, delay: 0.2 + navLinks.length * 0.1 }}
+                >
+                  <Link
+                    href="/technology/software"
+                    className="block text-xl font-semibold text-foreground hover:text-primary transition-colors py-2"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Software
+                  </Link>
+                </motion.div>
+                
+                <motion.div
+                  initial={{ x: -20, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.3, delay: 0.2 + (navLinks.length + 1) * 0.1 }}
+                >
+                  <Link
+                    href="/technology/hardware"
+                    className="block text-xl font-semibold text-foreground hover:text-primary transition-colors py-2"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Hardware
+                  </Link>
+                </motion.div>
+                
+                <motion.div
+                  initial={{ x: -20, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.3, delay: 0.2 + (navLinks.length + 2) * 0.1 }}
                   className="pt-6 border-t border-border"
                 >
                   <div className="flex items-center justify-between">
