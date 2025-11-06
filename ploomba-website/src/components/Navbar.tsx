@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
         className={`
           fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out
           ${isScrolled 
-            ? 'bg-background/95 backdrop-blur-md shadow-lg' 
+            ? 'bg-background/95 backdrop-blur-md shadow-lg dark:shadow-[0_4px_24px_rgba(0,0,0,0.6)] dark:border-b dark:border-border/40' 
             : 'bg-transparent'
           }
         `}
@@ -49,7 +49,7 @@ const Navbar: React.FC = () => {
           mx-auto transition-all duration-300 ease-in-out
           ${isScrolled 
             ? 'max-w-7xl px-4 py-3' 
-            : 'max-w-5xl px-6 py-4 mt-6 bg-card backdrop-blur-md rounded-2xl shadow-xl mx-4'
+            : 'max-w-5xl px-6 py-4 mt-6 bg-card backdrop-blur-md rounded-2xl shadow-xl dark:shadow-[0_10px_40px_rgba(0,0,0,0.7)] dark:border dark:border-border/30 mx-4'
           }
         `}>
           <div className="flex items-center justify-between">

@@ -127,31 +127,40 @@
 
   .dark {
     /* 
-     * SEMANTIC DARK MODE COLORS
-     * These override the light mode colors when .dark class is applied
-     * Usage: Add className="dark" to any parent element to enable dark mode
-     * 
-     * Example:
-     * <div className="dark">
-     *   <button className="bg-primary text-primary-foreground">Button</button>
-     * </div>
+     * OPTIMIZED DARK MODE
+     * Balanced contrast with clear visual hierarchy and comfortable reading.
+     * Uses a carefully calibrated slate palette with proper layering.
      */
-    --background: var(--pl-black);           /* Dark background */
-    --foreground: var(--pl-white);          /* Light text on dark background */
-    --primary: var(--pl-red);               /* Primary color remains the same */
-    --primary-hover: var(--pl-red-darker);  /* Primary hover state */
-    --primary-foreground: var(--pl-white);  /* White text on primary */
-    --secondary: var(--pl-light-grey);      /* Light grey for secondary elements */
-    --secondary-foreground: var(--pl-black); /* Dark text on light secondary */
-    --muted: 214 12% 24%;                  /* #373C41 - Darker muted background */
-    --muted-foreground: var(--pl-light-grey); /* Light text on muted background */
-    --accent: var(--pl-accent);             /* Accent color remains the same */
-    --accent-foreground: var(--pl-black);   /* Dark text on accent */
-    --card: 214 12% 24%;                   /* #373C41 - Dark card background */
-    --card-foreground: var(--pl-white);     /* Light text on cards */
-    --border: 214 12% 30%;                 /* #42484E - Darker borders */
     
-    /* Functional colors remain the same in dark mode */
+    /* --- Core Background & Text --- */
+    --background: 214 15% 14%;           /* Darker background (#1A1E22) - creates more contrast */
+    --foreground: 210 20% 92%;           /* Bright but not harsh text (#E4E8EC) */
+    
+    /* --- Primary Brand Colors --- */
+    --primary: var(--pl-red);
+    --primary-hover: var(--pl-red-darker);
+    --primary-foreground: var(--pl-white);
+    
+    /* --- Secondary Colors --- */
+    --secondary: var(--pl-light-grey);
+    --secondary-foreground: var(--pl-black);
+    
+    /* --- Muted Elements (subtle backgrounds & secondary text) --- */
+    --muted: 214 15% 20%;                /* Elevated muted bg (#2C3136) - clear separation */
+    --muted-foreground: 210 15% 65%;     /* Muted text (#9BA3AB) - good contrast */
+    
+    /* --- Accent Colors --- */
+    --accent: var(--pl-accent);
+    --accent-foreground: var(--pl-black);
+    
+    /* --- Cards & Panels (raised surfaces - navbar, cards, etc) --- */
+    --card: 214 20% 28%;                 /* Much lighter card bg (#404850) - really pops! */
+    --card-foreground: 210 20% 92%;      /* Same as foreground for consistency */
+    
+    /* --- Borders & Dividers --- */
+    --border: 214 18% 40%;               /* Much lighter borders (#616A73) - highly visible */
+    
+    /* --- Functional Colors --- */
     --destructive: var(--pl-danger-red);
     --destructive-foreground: var(--pl-white);
     --success: var(--pl-success-green);
@@ -159,9 +168,9 @@
     --warning: var(--pl-accent);
     --warning-foreground: var(--pl-black);
     
-    /* Footer colors stay the same in dark mode */
-    --footer: var(--pl-black);              /* Footer background - same as light mode */
-    --footer-foreground: var(--pl-white);   /* Text on footer background */
+    /* --- Footer --- */
+    --footer: var(--pl-black);
+    --footer-foreground: var(--pl-white);
   }
 }
 
