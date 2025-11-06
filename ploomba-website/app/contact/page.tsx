@@ -179,6 +179,7 @@ export default function ContactPage() {
                       transition={{ duration: 0.3 }}
                       onSubmit={handleSubmit(onSubmit)}
                       className="space-y-6"
+                      suppressHydrationWarning
                     >
                       {/* Name Field */}
                       <div>
@@ -191,6 +192,7 @@ export default function ContactPage() {
                           {...register('name')}
                           className="w-full px-4 py-3 bg-background border border-border rounded-md text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
                           placeholder="Your name"
+                          suppressHydrationWarning
                         />
                         {errors.name && (
                           <p className="mt-1 text-sm text-destructive">{errors.name.message}</p>
@@ -208,6 +210,7 @@ export default function ContactPage() {
                           {...register('email')}
                           className="w-full px-4 py-3 bg-background border border-border rounded-md text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
                           placeholder="your.email@example.com"
+                          suppressHydrationWarning
                         />
                         {errors.email && (
                           <p className="mt-1 text-sm text-destructive">{errors.email.message}</p>
@@ -225,6 +228,7 @@ export default function ContactPage() {
                           {...register('company')}
                           className="w-full px-4 py-3 bg-background border border-border rounded-md text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
                           placeholder="Your company (optional)"
+                          suppressHydrationWarning
                         />
                         {errors.company && (
                           <p className="mt-1 text-sm text-destructive">{errors.company.message}</p>
@@ -242,6 +246,7 @@ export default function ContactPage() {
                           rows={5}
                           className="w-full px-4 py-3 bg-background border border-border rounded-md text-foreground focus:outline-none focus:ring-2 focus:ring-primary transition-colors resize-none"
                           placeholder="Tell us about your project..."
+                          suppressHydrationWarning
                         />
                         {errors.message && (
                           <p className="mt-1 text-sm text-destructive">{errors.message.message}</p>
