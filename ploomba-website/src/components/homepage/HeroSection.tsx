@@ -1,8 +1,8 @@
 "use client";
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 
 interface HeroSectionProps {
@@ -10,6 +10,19 @@ interface HeroSectionProps {
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({ className = '' }) => {
+  // Words to cycle through
+  const words = ["Yields.", "Insights.", "Harvests.", "Data."];
+  const [index, setIndex] = useState(0);
+
+  // Timer effect to cycle through words
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % words.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [words.length]);
+
   return (
     <section className={`relative h-screen w-full overflow-hidden ${className}`}>
       {/* Background Video - All devices */}
@@ -43,10 +56,26 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className = '' }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
         >
-          {/* Main Heading */}
+          {/* Main Heading with Animated Word */}
           <h1 className="text-4xl font-bold tracking-tight md:text-6xl">
             Smarter Farming.{' '}
-            <span className="block">Stronger Yields.</span>
+            <span className="block">
+              Stronger{' '}
+              <span className="inline-block min-w-[150px] md:min-w-[250px] text-left">
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={index}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.5 }}
+                    className="inline-block"
+                  >
+                    {words[index]}
+                  </motion.span>
+                </AnimatePresence>
+              </span>
+            </span>
           </h1>
 
           {/* Sub-heading */}
