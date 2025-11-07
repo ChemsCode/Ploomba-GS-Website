@@ -218,6 +218,7 @@ const ServicesOverview: React.FC<ServicesOverviewProps> = ({ className = '' }) =
                 
                 <Link
                   href={services[0].href}
+                  aria-label="Learn more about our Autonomous Wagon hardware"
                   className="inline-flex items-center gap-2 font-bold text-lg text-primary hover:gap-3 transition-all duration-300"
                 >
                   <span>Learn More</span>
@@ -275,6 +276,7 @@ const ServicesOverview: React.FC<ServicesOverviewProps> = ({ className = '' }) =
                 
                 <Link
                   href={services[1].href}
+                  aria-label="Learn more about our Agro App software"
                   className="inline-flex items-center gap-2 font-bold text-lg text-primary hover:gap-3 transition-all duration-300"
                 >
                   <span>Learn More</span>
@@ -332,6 +334,7 @@ const ServicesOverview: React.FC<ServicesOverviewProps> = ({ className = '' }) =
                 
                 <Link
                   href={services[2].href}
+                  aria-label="Learn more about our AI-powered Analysis Platform"
                   className="inline-flex items-center gap-2 font-bold text-lg text-primary hover:gap-3 transition-all duration-300"
                 >
                   <span>Learn More</span>

@@ -24,6 +24,7 @@ export default function PostCard({ post }: PostCardProps) {
     >
       <Link
         href={`/blog/${post.slug}`}
+        aria-label={`Read more about ${post.title}`}
         className="group flex flex-col h-full overflow-hidden rounded-3xl border-2 border-border bg-card transition-all duration-300 hover:shadow-2xl hover:border-primary/50"
       >
         {/* Image Container */}

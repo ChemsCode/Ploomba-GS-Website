@@ -62,6 +62,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className = '' }) => {
         >
           <source src="/ploomba_hero.webm" type="video/webm" />
           <source src="/ploomba_hero.mp4" type="video/mp4" />
+          <track kind="captions" />
         </video>
       </motion.div>
 
@@ -165,7 +166,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className = '' }) => {
             </Link>
 
             {/* Secondary CTA */}
-            <Link href="/technology/software">
+            <Link href="/technology/software" aria-label="Learn more about Ploomba's agricultural software platform">
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
