@@ -37,20 +37,28 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className = '' }) => {
       className={`relative h-screen w-full overflow-hidden ${className}`}
     >
       {/* Background Image with Priority (for LCP optimization) */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 md:hidden">
         <Image
-          src="/ploomba_in_field_2.png"
+          src="/ploomba_in_field_1.jpg"
           alt="Ploomba autonomous wagon in strawberry field"
           fill
           priority
           className="object-cover brightness-[0.65] contrast-110 saturate-110"
-          quality={90}
+        />
+      </div>
+      <div className="absolute inset-0 z-0 hidden md:block">
+        <Image
+          src="/ploomba_in_field_2.jpg"
+          alt="Ploomba autonomous wagon in strawberry field"
+          fill
+          priority
+          className="object-cover brightness-[0.65] contrast-110 saturate-110"
         />
       </div>
 
       {/* Background Video with Parallax (loads after image) */}
       <motion.div 
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 hidden md:block"
         style={{ y: y1 }}
       >
         <video

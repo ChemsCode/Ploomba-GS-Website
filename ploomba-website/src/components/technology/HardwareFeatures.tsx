@@ -54,7 +54,7 @@ export default function HardwareFeatures() {
           >
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <Image
-                src="/ploomba_in_field_1.png"
+                src="/ploomba_in_field_1.jpg"
                 alt="Autonomous Wagon"
                 width={800}
                 height={600}

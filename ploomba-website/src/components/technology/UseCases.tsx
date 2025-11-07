@@ -8,17 +8,17 @@ export default function UseCases() {
     {
       title: 'Harvest Transport',
       description: 'Transports fruits and vegetables for the picker.',
-      image: '/ai_model_straweberries.png',
+      image: '/ai_model_straweberries.jpg',
     },
     {
       title: 'Precision Spraying',
       description: 'Precisely sprays phytosanitary products.',
-      image: '/ploomba_in_field_1.png',
+      image: '/ploomba_in_field_1.jpg',
     },
     {
       title: 'Field Analysis',
       description: 'Analyzes fields as it passes to detect issues.',
-      image: '/field_map.png',
+      image: '/field_map.jpg',
     },
   ];
 

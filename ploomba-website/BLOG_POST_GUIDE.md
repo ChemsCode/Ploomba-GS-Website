@@ -18,7 +18,7 @@ Blog posts are defined in `src/data/mock-posts.ts`. Each post is a JSON object w
   title: 'Your Post Title',
   tag: 'Technology', // or 'Innovation', 'Sustainability'
   excerpt: 'Short description for previews',
-  imageUrl: '/path-to-header-image.png',
+  imageUrl: '/path-to-header-image.jpg',
   author: 'Author Name',
   date: 'November 1, 2025',
   content: [
@@ -84,7 +84,7 @@ Use to add visual content.
 ```typescript
 {
   type: 'image',
-  src: '/ploomba_in_field_1.png',
+  src: '/ploomba_in_field_1.jpg',
   alt: 'Descriptive text for accessibility'
 }
 ```
@@ -143,7 +143,7 @@ content: [
   { type: 'paragraph', text: 'Introduction...' },
   { type: 'heading', level: 2, text: 'Main Section' },
   { type: 'paragraph', text: 'Section content...' },
-  { type: 'image', src: '/image.png', alt: 'Description' },
+  { type: 'image', src: '/image.jpg', alt: 'Description' },
   { type: 'paragraph', text: 'More content...' },
   { type: 'heading', level: 2, text: 'Conclusion' },
   { type: 'paragraph', text: 'Closing thoughts...' }
@@ -162,7 +162,7 @@ content: [
   { type: 'paragraph', text: 'Context and background...' },
   { type: 'heading', level: 2, text: 'The Solution' },
   { type: 'paragraph', text: 'Explanation...' },
-  { type: 'image', src: '/solution.png', alt: 'Solution visual' },
+  { type: 'image', src: '/solution.jpg', alt: 'Solution visual' },
   { type: 'quote', text: 'Key benefit or outcome' },
   { type: 'paragraph', text: 'Final thoughts...' }
 ]
@@ -185,7 +185,7 @@ content: [
   { type: 'paragraph', text: 'Description...' },
   { type: 'heading', level: 3, text: '3. Third Benefit' },
   { type: 'paragraph', text: 'Description...' },
-  { type: 'image', src: '/benefits.png', alt: 'Visual summary' }
+  { type: 'image', src: '/benefits.jpg', alt: 'Visual summary' }
 ]
 ```
 
@@ -238,7 +238,7 @@ content: [
   { type: 'quote', text: 'Pain point quote' },
   { type: 'heading', level: 2, text: 'The Solution' },
   { type: 'paragraph', text: 'How we solve it...' },
-  { type: 'image', src: '/solution.png', alt: 'Product' },
+  { type: 'image', src: '/solution.jpg', alt: 'Product' },
   { type: 'heading', level: 2, text: 'Real Results' },
   { type: 'paragraph', text: 'Benefits and outcomes...' }
 ]
@@ -252,7 +252,7 @@ content: [
   { type: 'paragraph', text: 'Definition...' },
   { type: 'heading', level: 2, text: 'Why It Matters' },
   { type: 'paragraph', text: 'Context...' },
-  { type: 'image', src: '/diagram.png', alt: 'Visual explanation' },
+  { type: 'image', src: '/diagram.jpg', alt: 'Visual explanation' },
   { type: 'heading', level: 2, text: 'How It Works' },
   { type: 'heading', level: 3, text: 'Step 1' },
   { type: 'paragraph', text: 'Details...' },
@@ -271,7 +271,7 @@ content: [
   { type: 'paragraph', text: 'Analysis...' },
   { type: 'heading', level: 2, text: 'The Future' },
   { type: 'paragraph', text: 'Vision...' },
-  { type: 'image', src: '/vision.png', alt: 'Future concept' },
+  { type: 'image', src: '/vision.jpg', alt: 'Future concept' },
   { type: 'quote', text: 'Memorable closing', author: 'Your Team' }
 ]
 ```
@@ -292,7 +292,7 @@ Copy an existing post structure or use this template:
   title: 'My Post Title',
   tag: 'Technology',
   excerpt: 'Brief description',
-  imageUrl: '/header-image.png',
+  imageUrl: '/header-image.jpg',
   author: 'Your Name',
   date: 'November 6, 2025',
   content: [
@@ -337,7 +337,7 @@ Save the file and view your post at: `localhost:3000/blog/my-new-post`
 
 **Image not showing:**
 - Make sure image is in `/public` folder
-- Use `/image.png` not `./public/image.png`
+- Use `/image.jpg` not `./public/image.jpg`
 - Check file extension matches exactly
 
 **Quote not styled correctly:**

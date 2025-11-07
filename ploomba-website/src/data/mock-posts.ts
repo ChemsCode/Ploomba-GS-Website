@@ -51,7 +51,7 @@ export const allPosts: Post[] = [
     title: 'Rethinking Fieldwork: How Lightweight Autonomy Solves Soil Compaction',
     tag: 'Technology',
     excerpt: 'Heavy machinery compacts your soil, strangling yields. Our autonomous wagon is designed to be lightweight and intelligent, solving this problem.',
-    imageUrl: '/ploomba_in_field_1.png',
+    imageUrl: '/ploomba_in_field_1.jpg',
     author: 'Ploomba Engineering Team',
     date: 'November 1, 2025',
     content: [
@@ -61,7 +61,7 @@ export const allPosts: Post[] = [
       },
       {
         type: 'image',
-        src: '/ploomba_in_field_1.png',
+        src: '/ploomba_in_field_1.jpg',
         alt: 'Heavy machinery compacting soil in agricultural fields'
       },
       {
@@ -101,7 +101,7 @@ export const allPosts: Post[] = [
       },
       {
         type: 'image',
-        src: '/ploomba_in_field_1.png',
+        src: '/ploomba_in_field_1.jpg',
         alt: 'The Ploomba autonomous wagon in a field'
       },
       {
@@ -129,7 +129,7 @@ export const allPosts: Post[] = [
     title: 'From Guesswork to Data-Driven Decisions: Using AI to Predict Yields',
     tag: 'Innovation',
     excerpt: 'Stop reacting to problems. Our Analysis Platform uses AI to help you recognize signs of pests and accurately estimate your yields months before harvest.',
-    imageUrl: '/ai_model_straweberries.png',
+    imageUrl: '/ai_model_straweberries.jpg',
     author: 'Dr. Jane Smith, Head of Data Science',
     date: 'October 28, 2025',
     content: [
@@ -153,7 +153,7 @@ export const allPosts: Post[] = [
       },
       {
         type: 'image',
-        src: '/ai_model_straweberries.png',
+        src: '/ai_model_straweberries.jpg',
         alt: 'AI model analyzing strawberry growth and yield'
       },
       {
@@ -211,7 +211,7 @@ export const allPosts: Post[] = [
     title: "Why 'Farmer-First' Isn't Just a Slogan, It's Our Business Model",
     tag: 'Sustainability',
     excerpt: "Technology can be complicated. Our 'Farmer-First' value means we build tools that solve real problems, are easy to use, and are environmentally sustainable.",
-    imageUrl: '/ploomba_in_field_2.png',
+    imageUrl: '/ploomba_in_field_2.jpg',
     author: 'Ploomba Leadership',
     date: 'October 25, 2025',
     content: [
@@ -275,7 +275,7 @@ export const allPosts: Post[] = [
       },
       {
         type: 'image',
-        src: '/ploomba_in_field_2.png',
+        src: '/ploomba_in_field_2.jpg',
         alt: 'Ploomba autonomous wagon working alongside farmers'
       },
       {
