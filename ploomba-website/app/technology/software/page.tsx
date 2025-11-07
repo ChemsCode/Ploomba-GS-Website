@@ -591,17 +591,6 @@ export default function SoftwarePage() {
             ))}
           </div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-12 text-center"
-          >
-            <p className="text-sm text-muted-foreground">
-              All plans include a 30-day money-back guarantee. No credit card required for the free tier.
-            </p>
-          </motion.div>
         </div>
       </section>
     </main>
