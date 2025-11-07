@@ -27,11 +27,7 @@ const ContentTeaser: React.FC<ContentTeaserProps> = ({ className = '' }) => {
     show: { 
       opacity: 1, 
       y: 0, 
-      scale: 1,
-      transition: {
-        duration: 0.6,
-        ease: [0.6, -0.05, 0.01, 0.99]
-      }
+      scale: 1
     }
   };
 
@@ -98,10 +94,10 @@ const ContentTeaser: React.FC<ContentTeaserProps> = ({ className = '' }) => {
           {latestPosts.map((post) => (
             <motion.div 
               key={post.slug} 
-              variants={cardVariants} 
+              variants={cardVariants}
+              transition={{ duration: 0.6 }}
               className="h-full"
               whileHover={{ y: -10 }}
-              transition={{ duration: 0.3 }}
             >
               <PostCard post={post} />
             </motion.div>
