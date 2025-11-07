@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
@@ -35,7 +36,19 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className = '' }) => {
       ref={heroRef}
       className={`relative h-screen w-full overflow-hidden ${className}`}
     >
-      {/* Background Video with Parallax */}
+      {/* Background Image with Priority (for LCP optimization) */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/ploomba_in_field_2.png"
+          alt="Ploomba autonomous wagon in strawberry field"
+          fill
+          priority
+          className="object-cover brightness-[0.65] contrast-110 saturate-110"
+          quality={90}
+        />
+      </div>
+
+      {/* Background Video with Parallax (loads after image) */}
       <motion.div 
         className="absolute inset-0 z-0"
         style={{ y: y1 }}
@@ -45,12 +58,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className = '' }) => {
           loop
           muted
           playsInline
-          poster="/ploomba_in_field_2.png"
           className="absolute left-0 top-0 h-[120%] w-full object-cover brightness-[0.65] contrast-110 saturate-110"
         >
           <source src="/ploomba_hero.webm" type="video/webm" />
           <source src="/ploomba_hero.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
         </video>
       </motion.div>
 
