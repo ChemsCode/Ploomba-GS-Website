@@ -68,17 +68,6 @@ const FoundingStory: React.FC<FoundingStoryProps> = ({ className = '' }) => {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm mb-6"
-          >
-            <Calendar className="w-4 h-4 text-primary" />
-            <span className="text-sm font-semibold text-foreground">Our Journey</span>
-          </motion.div>
-          
           <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
             From Idea to
             <span className="bg-clip-text text-transparent bg-linear-to-r from-primary to-primary/60"> Innovation</span>

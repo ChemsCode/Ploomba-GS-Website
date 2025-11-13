@@ -34,7 +34,7 @@ const ContentTeaser: React.FC<ContentTeaserProps> = ({ className = '' }) => {
   return (
     <section className={`relative py-20 sm:py-32 overflow-hidden ${className}`}>
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/20 to-background" />
+      <div className="absolute inset-0 bg-linear-to-b from-background via-muted/20 to-background" />
       
       {/* Decorative blobs */}
       <motion.div
@@ -59,21 +59,10 @@ const ContentTeaser: React.FC<ContentTeaserProps> = ({ className = '' }) => {
           transition={{ duration: 0.8 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm mb-6"
-          >
-            <Newspaper className="w-4 h-4 text-primary" />
-            <span className="text-sm font-semibold text-foreground">From Our Blog</span>
-          </motion.div>
-
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-6">
             Latest News &amp;
             <br />
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/60">
+            <span className="bg-clip-text text-transparent bg-linear-to-r from-primary to-primary/60">
               Industry Insights
             </span>
           </h2>

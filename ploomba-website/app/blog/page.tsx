@@ -45,16 +45,6 @@ export default function BlogPage() {
         />
         
         <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm mb-6"
-          >
-            <BookOpen className="w-4 h-4 text-primary" />
-            <span className="text-sm font-semibold text-foreground">Insights & Updates</span>
-          </motion.div>
-          
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}

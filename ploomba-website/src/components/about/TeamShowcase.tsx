@@ -67,17 +67,6 @@ const TeamShowcase: React.FC<TeamShowcaseProps> = ({ className = '' }) => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm mb-6"
-          >
-            <Users2 className="w-4 h-4 text-primary" />
-            <span className="text-sm font-semibold text-foreground">The Team</span>
-          </motion.div>
-          
           <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
             Meet Our
             <span className="bg-clip-text text-transparent bg-linear-to-r from-primary to-primary/60"> Team</span>

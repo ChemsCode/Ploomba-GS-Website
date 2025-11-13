@@ -21,7 +21,7 @@ const SocialProof: React.FC<SocialProofProps> = ({ className = '' }) => {
   return (
     <section className={`relative py-20 sm:py-32 overflow-hidden ${className}`}>
       {/* Background with gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-muted via-muted/50 to-muted" />
+      <div className="absolute inset-0 bg-linear-to-b from-muted via-muted/50 to-muted" />
       
       {/* Decorative elements */}
       <motion.div
@@ -51,18 +51,6 @@ const SocialProof: React.FC<SocialProofProps> = ({ className = '' }) => {
       />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-        {/* Header Badge */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm mb-8"
-        >
-          <Award className="w-4 h-4 text-primary" />
-          <span className="text-sm font-semibold text-foreground">Trusted & Recognized</span>
-        </motion.div>
-
         {/* Testimonial Card */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -89,9 +77,9 @@ const SocialProof: React.FC<SocialProofProps> = ({ className = '' }) => {
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent rounded-full blur-xl"
+                  className="absolute inset-0 bg-linear-to-r from-primary/20 to-transparent rounded-full blur-xl"
                 />
-                <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center shadow-lg">
+                <div className="relative w-16 h-16 rounded-full bg-linear-to-br from-primary to-primary/70 flex items-center justify-center shadow-lg">
                   <Quote className="h-8 w-8 text-primary-foreground" />
                 </div>
               </div>
@@ -139,7 +127,7 @@ const SocialProof: React.FC<SocialProofProps> = ({ className = '' }) => {
               transition={{ delay: 0.7, duration: 0.6 }}
             >
               <div className="flex items-center justify-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-full bg-linear-to-br from-primary/20 to-primary/5 flex items-center justify-center">
                   <Award className="w-6 h-6 text-primary" />
                 </div>
                 <div className="text-left">
@@ -150,7 +138,7 @@ const SocialProof: React.FC<SocialProofProps> = ({ className = '' }) => {
             </motion.div>
 
             {/* Decorative gradient */}
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/5 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute inset-0 rounded-3xl bg-linear-to-br from-primary/5 via-transparent to-transparent pointer-events-none" />
           </div>
         </motion.div>
 

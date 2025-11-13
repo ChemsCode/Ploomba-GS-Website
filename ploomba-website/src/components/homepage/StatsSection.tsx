@@ -169,17 +169,6 @@ const StatsSection: React.FC<{ className?: string }> = ({ className = '' }) => {
           transition={{ duration: 0.8 }}
           className="text-center max-w-3xl mx-auto mb-20"
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm mb-6"
-          >
-            <Activity className="w-4 h-4 text-primary" />
-            <span className="text-sm font-semibold text-foreground">Performance Metrics</span>
-          </motion.div>
-
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
             <span className="text-foreground">Proven Results.</span>
             <br />

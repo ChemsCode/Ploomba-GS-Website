@@ -144,16 +144,6 @@ export default function SoftwarePage() {
         />
         
         <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm mb-6"
-          >
-            <Code className="w-4 h-4 text-primary" />
-            <span className="text-sm font-semibold text-foreground">Software Platform</span>
-          </motion.div>
-
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -199,16 +189,6 @@ export default function SoftwarePage() {
             transition={{ duration: 0.6 }}
             className="text-center max-w-5xl mx-auto"
           >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm mb-8"
-            >
-              <Sparkles className="w-4 h-4 text-primary" />
-              <span className="text-sm font-semibold text-foreground">Built for Farmers & Agronomists</span>
-            </motion.div>
-
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -271,17 +251,6 @@ export default function SoftwarePage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-20"
           >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm mb-6"
-            >
-              <Layers className="w-4 h-4 text-primary" />
-              <span className="text-sm font-semibold text-foreground">Core Features</span>
-            </motion.div>
-
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
               <span className="text-foreground">Three Powerful Tools for </span>
               <span className="bg-clip-text text-transparent bg-linear-to-r from-primary to-primary/60">
@@ -378,17 +347,6 @@ export default function SoftwarePage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm mb-6"
-            >
-              <Sparkles className="w-4 h-4 text-primary" />
-              <span className="text-sm font-semibold text-foreground">Why Choose Ploomba</span>
-            </motion.div>
-
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
               <span className="text-foreground">Everything You Need in </span>
               <span className="bg-clip-text text-transparent bg-linear-to-r from-primary to-primary/60">
@@ -509,17 +467,6 @@ export default function SoftwarePage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm mb-6"
-            >
-              <DollarSign className="w-4 h-4 text-primary" />
-              <span className="text-sm font-semibold text-foreground">Pricing Plans</span>
-            </motion.div>
-
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4">
               Choose Your
               <span className="bg-clip-text text-transparent bg-linear-to-r from-primary to-primary/60"> Perfect Plan</span>

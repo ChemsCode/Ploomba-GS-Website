@@ -161,19 +161,6 @@ export default function PostPage() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        {/* Tag Badge */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm mb-6"
-        >
-          <Sparkles className="w-4 h-4 text-primary" />
-          <span className="text-sm font-bold uppercase text-primary tracking-wide">
-            {post.tag}
-          </span>
-        </motion.div>
-
         {/* Title */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -283,17 +270,6 @@ export default function PostPage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm mb-4"
-            >
-              <Sparkles className="w-4 h-4 text-primary" />
-              <span className="text-sm font-semibold text-foreground">More Insights</span>
-            </motion.div>
-            
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
               You Might Also
               <span className="bg-clip-text text-transparent bg-linear-to-r from-primary to-primary/60"> Like</span>

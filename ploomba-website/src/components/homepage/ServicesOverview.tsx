@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Truck, Smartphone, BarChart3, ArrowRight, Zap } from 'lucide-react';
+import { Truck, Smartphone, BarChart3, ArrowRight } from 'lucide-react';
 
 interface ServicesOverviewProps {
   className?: string;
@@ -86,19 +86,6 @@ const ServicesOverview: React.FC<ServicesOverviewProps> = ({ className = '' }) =
       <div className="relative z-10 container px-4 sm:px-6 lg:px-8 mx-auto">
         {/* Header */}
         <div className="mb-12 md:mb-16 text-center max-w-3xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="flex items-center justify-center gap-4 mb-6"
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm">
-              <Zap className="w-4 h-4 text-primary" />
-              <span className="text-sm font-semibold text-foreground">Complete Ag-Tech Solution</span>
-            </div>
-          </motion.div>
-          
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -140,13 +127,6 @@ const ServicesOverview: React.FC<ServicesOverviewProps> = ({ className = '' }) =
             >
               {/* Background gradient overlay */}
               <div className={`absolute inset-0 bg-linear-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-              
-              {/* Badge */}
-              <div className="absolute top-6 right-6 z-10">
-                <div className="inline-flex items-center justify-center px-3 py-1.5 rounded-full bg-primary/10 backdrop-blur-md border border-primary/20 group-hover:bg-primary/20 group-hover:border-primary/30 transition-all duration-300">
-                  <span className="text-xs font-semibold text-foreground">{service.badge}</span>
-                </div>
-              </div>
               
               {/* Content */}
               <div className="relative z-10 p-8 lg:p-10 h-full flex flex-col">

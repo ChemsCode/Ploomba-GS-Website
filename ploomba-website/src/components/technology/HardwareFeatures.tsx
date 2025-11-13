@@ -79,16 +79,6 @@ export default function HardwareFeatures() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm mb-6"
-            >
-              <Sparkles className="w-4 h-4 text-primary" />
-              <span className="text-sm font-semibold text-foreground">Key Features</span>
-            </motion.div>
-
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
               <span className="text-foreground">Autonomous </span>
               <span className="bg-clip-text text-transparent bg-linear-to-r from-primary to-primary/60">
