@@ -132,7 +132,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className = '' }) => {
             transition={{ duration: 0.8, delay: 0.7 }}
             className="text-xl sm:text-2xl md:text-3xl text-foreground/80 font-light max-w-4xl mx-auto leading-relaxed"
           >
-            Autonomous robots and AI-driven analytics revolutionizing agriculture
+            Revolutionizing agriculture with autonomous robots and AI analytics for sustainable farming.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -188,7 +188,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className = '' }) => {
           </motion.div>
 
           {/* Minimal feature highlights */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.1 }}
@@ -209,7 +209,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ className = '' }) => {
                 {feature}
               </motion.div>
             ))}
-          </motion.div>
+          </motion.div> */}
         </div>
       </motion.div>
 
