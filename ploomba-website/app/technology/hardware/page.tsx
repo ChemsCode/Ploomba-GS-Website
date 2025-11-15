@@ -17,8 +17,7 @@ import {
   ChevronRight,
   CheckCircle2,
   Camera,
-  Cpu,
-  Navigation
+  Cpu
 } from 'lucide-react';
 
 export default function WagonPage() {
@@ -513,20 +512,28 @@ export default function WagonPage() {
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {[1, 2, 3, 4].map((item) => (
+            {[
+              { src: '/new_ploomba_in_field_1.jpg', alt: 'Ploomba autonomous wagon in strawberry field' },
+              { src: '/new_ploomba_in_field_2.jpg', alt: 'Ploomba wagon carrying strawberry harvest' },
+              { src: '/new_ploomba_in_field_3.jpg', alt: 'Ploomba operating in agricultural field' },
+              { src: '/new_ploomba_in_field_4.jpg', alt: 'Ploomba autonomous transport system' },
+            ].map((image, index) => (
               <motion.div
-                key={item}
+                key={index}
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: item * 0.1 }}
-                className="relative rounded-3xl overflow-hidden border-2 border-border shadow-xl bg-muted/30 hover:border-primary/50 transition-all duration-300"
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="relative rounded-3xl overflow-hidden border-2 border-border shadow-xl hover:border-primary/50 hover:shadow-2xl transition-all duration-300 group"
               >
-                <div className="aspect-video flex items-center justify-center">
-                  <div className="text-center">
-                    <Navigation className="w-12 h-12 text-muted-foreground mx-auto mb-3" />
-                    <p className="text-muted-foreground">Gallery Image {item}</p>
-                  </div>
+                <div className="relative aspect-video">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
                 </div>
               </motion.div>
             ))}
