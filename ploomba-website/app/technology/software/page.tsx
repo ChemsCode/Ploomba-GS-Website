@@ -497,6 +497,60 @@ export default function SoftwarePage() {
             ))}
           </div>
 
+          {/* CTA to Try Free Version */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="mt-16 text-center"
+          >
+            <div className="relative rounded-3xl border-2 border-border bg-card/50 backdrop-blur-sm p-8 sm:p-12 overflow-hidden shadow-2xl max-w-4xl mx-auto">
+              {/* Animated gradient background */}
+              <div className="absolute inset-0 bg-linear-to-br from-primary/5 via-transparent to-primary/5" />
+              
+              {/* Floating decorative element */}
+              <motion.div
+                className="absolute top-0 right-0 w-64 h-64 bg-linear-to-bl from-primary/20 to-transparent rounded-full blur-3xl"
+                animate={{
+                  scale: [1, 1.2, 1],
+                  opacity: [0.3, 0.5, 0.3],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+
+              <div className="relative z-10">
+                <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
+                  Ready to Get Started?
+                </h3>
+                <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+                  Try our free version today and experience the power of Ploomba&apos;s farm management software
+                </p>
+                
+                <Link href="/contact">
+                  <motion.div
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-full font-bold text-lg shadow-xl cursor-pointer relative overflow-hidden"
+                  >
+                    <span className="relative z-10">Try Free Version</span>
+                    {/* Shine effect */}
+                    <motion.div
+                      className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent"
+                      initial={{ x: '-100%' }}
+                      whileHover={{ x: '100%' }}
+                      transition={{ duration: 0.6 }}
+                    />
+                  </motion.div>
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+
         </div>
       </section>
     </main>
