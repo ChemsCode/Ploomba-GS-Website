@@ -3,7 +3,8 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Book, BarChart, DollarSign, Check, Sparkles, Code, Layers, Image as ImageIcon, TrendingUp, Link2 } from 'lucide-react';
+import { Book, BarChart, DollarSign, Check, Layers, Image as ImageIcon, TrendingUp, Link2 } from 'lucide-react';
+import FeaturesShowcase from '../../../src/components/homepage/FeaturesShowcase';
 
 export default function SoftwarePage() {
   useEffect(() => {
@@ -195,7 +196,7 @@ export default function SoftwarePage() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8"
             >
-              <span className="text-foreground">Ploomba's software is built with </span>
+              <span className="text-foreground">Ploomba&apos;s software is built with </span>
               <span className="bg-clip-text text-transparent bg-linear-to-r from-primary to-primary/60">
                 farmers and agronomists
               </span>
@@ -390,6 +391,9 @@ export default function SoftwarePage() {
         </div>
       </section>
 
+      {/* Features Showcase */}
+      <FeaturesShowcase />
+
       {/* CTA Section */}
       <section className="py-20 sm:py-32 bg-muted/30 relative overflow-hidden">
         <motion.div
@@ -509,7 +513,7 @@ export default function SoftwarePage() {
                     <p className="text-sm text-muted-foreground leading-relaxed">{tier.description}</p>
                   </div>
 
-                  <ul className="space-y-4 mb-8 flex-grow">
+                  <ul className="space-y-4 mb-8 grow">
                     {tier.features.map((feature, i) => (
                       <li key={i} className="flex items-start gap-3">
                         <div className="shrink-0 w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
