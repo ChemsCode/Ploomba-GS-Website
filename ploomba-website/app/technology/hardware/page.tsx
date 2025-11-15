@@ -21,7 +21,7 @@ import {
   Navigation
 } from 'lucide-react';
 
-export default function HardwarePage() {
+export default function WagonPage() {
   const [activeTab, setActiveTab] = useState<'autonomy' | 'computing' | 'physical' | 'power'>('autonomy');
 
   useEffect(() => {

@@ -123,7 +123,7 @@ const Navbar: React.FC = () => {
                           href="/technology/hardware"
                           className="block px-4 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
                         >
-                          Hardware
+                          Wagon
                         </Link>
                       </div>
                     </motion.div>
@@ -248,7 +248,7 @@ const Navbar: React.FC = () => {
                     className="block text-xl font-semibold text-foreground hover:text-primary transition-colors py-2"
                     onClick={() => setIsOpen(false)}
                   >
-                    Hardware
+                    Wagon
                   </Link>
                 </motion.div>
                 
