@@ -11,11 +11,8 @@ import {
   Shield,
   Gauge,
   Cloud,
-  Zap,
-  ArrowRight,
   Sparkles
 } from 'lucide-react';
-import Link from 'next/link';
 
 interface FeatureCardProps {
   icon: React.ElementType;
@@ -295,7 +292,7 @@ const FeaturesShowcase: React.FC<{ className?: string }> = ({ className = '' }) 
 
             <div className="relative z-10">
               {/* Quick Stats */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mb-12">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
                 {highlights.map((highlight, idx) => (
                   <motion.div
                     key={idx}
@@ -314,53 +311,6 @@ const FeaturesShowcase: React.FC<{ className?: string }> = ({ className = '' }) 
                     </div>
                   </motion.div>
                 ))}
-              </div>
-
-              {/* CTA */}
-              <div className="text-center">
-                <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
-                  Experience the Future of Farming
-                </h3>
-                <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-                  Discover how our integrated hardware and software solutions can transform your agricultural operations
-                </p>
-                
-                <div className="flex flex-wrap items-center justify-center gap-4">
-                  <Link href="/technology/hardware">
-                    <motion.div
-                      whileHover={{ scale: 1.05, y: -2 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="group inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-full font-bold text-lg shadow-xl cursor-pointer relative overflow-hidden"
-                    >
-                      <span className="relative z-10">View Hardware</span>
-                      <motion.span
-                        className="relative z-10"
-                        animate={{ x: [0, 5, 0] }}
-                        transition={{ duration: 1.5, repeat: Infinity }}
-                      >
-                        <ArrowRight className="w-5 h-5" />
-                      </motion.span>
-                      {/* Shine effect */}
-                      <motion.div
-                        className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent"
-                        initial={{ x: '-100%' }}
-                        whileHover={{ x: '100%' }}
-                        transition={{ duration: 0.6 }}
-                      />
-                    </motion.div>
-                  </Link>
-                  
-                  <Link href="/technology/software">
-                    <motion.div
-                      whileHover={{ scale: 1.05, y: -2 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="inline-flex items-center gap-2 px-8 py-4 bg-card border-2 border-primary/30 text-foreground rounded-full font-bold text-lg hover:bg-primary/5 hover:border-primary transition-all duration-300 cursor-pointer"
-                    >
-                      <span>View Software</span>
-                      <Zap className="w-5 h-5" />
-                    </motion.div>
-                  </Link>
-                </div>
               </div>
             </div>
           </div>
