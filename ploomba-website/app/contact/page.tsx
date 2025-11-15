@@ -78,10 +78,10 @@ export default function ContactPage() {
     },
     {
       icon: MapPin,
-      title: "Address",
-      value: "Montreal, QC, Canada",
+      title: "Service Area",
+      value: "Currently serving the greater Montreal area",
       href: null,
-      description: "Come visit our office"
+      description: "Proud to serve local farms"
     }
   ];
 
@@ -441,7 +441,7 @@ export default function ContactPage() {
                       className="-m-8"
                     >
                       <InlineWidget
-                        url="https://calendly.com/ploomba-demo/30min"
+                        url="https://calendly.com/ploomba-info"
                         styles={{
                           height: '700px',
                           width: '100%',

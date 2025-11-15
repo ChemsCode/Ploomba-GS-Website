@@ -18,6 +18,22 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Ploomba - Smarter Farming. Stronger Yields.",
   description: "Ploomba's autonomous robots and AI-driven analytics help you reduce soil compaction and optimize your harvest.",
+  icons: {
+    icon: '/Ploomba_Logo_Without_Text.svg',
+    apple: '/Ploomba_Logo_Without_Text.svg',
+  },
+  openGraph: {
+    title: "Ploomba - Smarter Farming. Stronger Yields.",
+    description: "Ploomba's autonomous robots and AI-driven analytics help you reduce soil compaction and optimize your harvest.",
+    images: ['/Ploomba_Logo_Without_Text.svg'],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: "Ploomba - Smarter Farming. Stronger Yields.",
+    description: "Ploomba's autonomous robots and AI-driven analytics help you reduce soil compaction and optimize your harvest.",
+    images: ['/Ploomba_Logo_Without_Text.svg'],
+  },
 };
 
 export default function RootLayout({
