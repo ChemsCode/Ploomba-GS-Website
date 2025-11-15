@@ -51,7 +51,7 @@ export const allPosts: Post[] = [
     title: 'Rethinking Fieldwork: How Lightweight Autonomy Solves Soil Compaction',
     tag: 'Technology',
     excerpt: 'Heavy machinery compacts your soil, strangling yields. Our autonomous wagon is designed to be lightweight and intelligent, solving this problem.',
-    imageUrl: '/ploomba_in_field_1.jpg',
+    imageUrl: '/new_ploomba_in_field_3.jpg',
     author: 'Ploomba Engineering Team',
     date: 'November 1, 2025',
     content: [
@@ -61,8 +61,8 @@ export const allPosts: Post[] = [
       },
       {
         type: 'image',
-        src: '/ploomba_in_field_1.jpg',
-        alt: 'Heavy machinery compacting soil in agricultural fields'
+        src: '/new_ploomba_in_field_3.jpg',
+        alt: 'Ploomba autonomous wagon in strawberry field'
       },
       {
         type: 'paragraph',
@@ -101,7 +101,7 @@ export const allPosts: Post[] = [
       },
       {
         type: 'image',
-        src: '/ploomba_in_field_1.jpg',
+        src: '/new_ploomba_in_field_3.jpg',
         alt: 'The Ploomba autonomous wagon in a field'
       },
       {
@@ -211,7 +211,7 @@ export const allPosts: Post[] = [
     title: "Why 'Farmer-First' Isn't Just a Slogan, It's Our Business Model",
     tag: 'Sustainability',
     excerpt: "Technology can be complicated. Our 'Farmer-First' value means we build tools that solve real problems, are easy to use, and are environmentally sustainable.",
-    imageUrl: '/ploomba_in_field_2.jpg',
+    imageUrl: '/new_ploomba_in_field_4.jpg',
     author: 'Ploomba Leadership',
     date: 'October 25, 2025',
     content: [
@@ -275,7 +275,7 @@ export const allPosts: Post[] = [
       },
       {
         type: 'image',
-        src: '/ploomba_in_field_2.jpg',
+        src: '/new_ploomba_in_field_4.jpg',
         alt: 'Ploomba autonomous wagon working alongside farmers'
       },
       {

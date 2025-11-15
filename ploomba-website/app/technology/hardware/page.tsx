@@ -16,8 +16,6 @@ import {
   AlertCircle,
   ChevronRight,
   CheckCircle2,
-  Camera,
-  Cpu
 } from 'lucide-react';
 
 export default function WagonPage() {
@@ -198,18 +196,21 @@ export default function WagonPage() {
             </p>
           </motion.div>
 
-          {/* Image Placeholder */}
+          {/* Product Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 1.2 }}
-            className="relative rounded-3xl overflow-hidden border-2 border-border shadow-2xl bg-muted/30"
+            className="relative rounded-3xl overflow-hidden border-2 border-border shadow-2xl"
           >
-            <div className="aspect-video flex items-center justify-center">
-              <div className="text-center">
-                <Camera className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
-                <p className="text-muted-foreground">Product Image</p>
-              </div>
+            <div className="relative aspect-video">
+              <Image
+                src="/prototype_cad.jpg"
+                alt="Ploomba wagon CAD design"
+                fill
+                className="object-contain bg-muted/30"
+                sizes="(max-width: 1280px) 100vw, 1280px"
+              />
             </div>
           </motion.div>
         </div>
@@ -308,13 +309,16 @@ export default function WagonPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative rounded-3xl overflow-hidden border-2 border-border shadow-2xl bg-muted/30"
+              className="relative rounded-3xl overflow-hidden border-2 border-border shadow-2xl"
             >
-              <div className="aspect-square flex items-center justify-center">
-                <div className="text-center">
-                  <Zap className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
-                  <p className="text-muted-foreground">Capabilities Image</p>
-                </div>
+              <div className="relative aspect-square">
+                <Image
+                  src="/prototype_cad2.jpg"
+                  alt="Ploomba wagon technical design"
+                  fill
+                  className="object-contain bg-muted/30"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
               </div>
             </motion.div>
           </div>
@@ -331,13 +335,16 @@ export default function WagonPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative rounded-3xl overflow-hidden border-2 border-border shadow-2xl bg-muted/30 md:order-1"
+              className="relative rounded-3xl overflow-hidden border-2 border-border shadow-2xl md:order-1"
             >
-              <div className="aspect-square flex items-center justify-center">
-                <div className="text-center">
-                  <Cpu className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
-                  <p className="text-muted-foreground">AI Technology Image</p>
-                </div>
+              <div className="relative aspect-square">
+                <Image
+                  src="/prototype_cad3.jpg"
+                  alt="Ploomba wagon engineering design"
+                  fill
+                  className="object-contain bg-muted/30"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
               </div>
             </motion.div>
 
