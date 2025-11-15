@@ -3,6 +3,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Book, BarChart, DollarSign, Check, Layers, Image as ImageIcon, TrendingUp, Link2 } from 'lucide-react';
 import FeaturesShowcase from '../../../src/components/homepage/FeaturesShowcase';
 
@@ -16,6 +17,7 @@ export default function SoftwarePage() {
       icon: Book,
       title: "Farm Journal",
       description: "Your complete farm management hub in one place",
+      image: "/software_field_journal.jpg",
       points: [
         "Keep track of all your fields, equipment, and Ploomba wagons in a simple and fluid UI",
         "Keep everything organized — tag and link fields, logs, and equipment to see how they all fit together",
@@ -27,6 +29,7 @@ export default function SoftwarePage() {
       icon: BarChart,
       title: "Yield Prediction",
       description: "AI-powered insights for smarter harvest planning",
+      image: "/software_yield_prediction.jpg",
       points: [
         "Store pictures of the produce in your fields and let our AI analysis tool predict the number of ready-to-harvest produce per field",
         "Search these pictures for rotten or unripe produce to get a better understanding of quality",
@@ -38,6 +41,7 @@ export default function SoftwarePage() {
       icon: DollarSign,
       title: "Revenue Forecasting",
       description: "Make confident financial decisions with data-driven insights",
+      image: "/software_revenue_predicition.jpg",
       points: [
         "Forecast your revenue with our Retail Price Analysis tool, dependent on your yield, season, and market",
         "See average expenses in your area and get insights to help you predict future costs",
@@ -262,7 +266,6 @@ export default function SoftwarePage() {
 
           <div className="space-y-32">
             {features.map((feature, index) => {
-              const Icon = feature.icon;
               const isEven = index % 2 === 0;
               
               return (
@@ -276,18 +279,24 @@ export default function SoftwarePage() {
                     isEven ? '' : 'md:flex-row-reverse'
                   }`}
                 >
-                  {/* Icon/Visual Side */}
+                  {/* Image/Visual Side */}
                   <motion.div 
                     className={`${isEven ? 'md:order-1' : 'md:order-2'}`}
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="relative flex items-center justify-center p-12 bg-card border-2 border-border rounded-3xl shadow-lg overflow-hidden group">
-                      {/* Hover gradient */}
-                      <div className="absolute inset-0 bg-linear-to-br from-primary/0 to-primary/0 group-hover:from-primary/10 group-hover:to-transparent transition-all duration-500" />
+                    <div className="relative rounded-3xl shadow-2xl overflow-hidden group border-2 border-border">
+                      {/* Hover gradient overlay */}
+                      <div className="absolute inset-0 bg-linear-to-br from-primary/0 to-primary/0 group-hover:from-primary/10 group-hover:to-transparent transition-all duration-500 z-10" />
                       
-                      <div className="relative w-32 h-32 rounded-2xl bg-linear-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                        <Icon className="w-20 h-20 text-primary" strokeWidth={1.5} />
+                      <div className="relative aspect-4/3 w-full">
+                        <Image
+                          src={feature.image}
+                          alt={feature.title}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                        />
                       </div>
                     </div>
                   </motion.div>
@@ -393,60 +402,6 @@ export default function SoftwarePage() {
 
       {/* Features Showcase */}
       <FeaturesShowcase />
-
-      {/* CTA Section */}
-      <section className="py-20 sm:py-32 bg-muted/30 relative overflow-hidden">
-        <motion.div
-          className="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"
-          animate={{
-            x: [0, 50, 0],
-            y: [0, -30, 0],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-6">
-              Ready to Transform
-              <span className="bg-clip-text text-transparent bg-linear-to-r from-primary to-primary/60"> Your Farm?</span>
-            </h2>
-            <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-              Start with our free version or explore our pricing plans to find the perfect solution for your operation.
-            </p>
-            
-            <div className="flex flex-wrap gap-4 items-center justify-center">
-              <Link href="/contact">
-                <motion.div
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="bg-primary text-primary-foreground px-8 py-4 rounded-full text-lg font-bold transition-all duration-200 shadow-xl hover:shadow-2xl cursor-pointer"
-                >
-                  Try the Free Version
-                </motion.div>
-              </Link>
-              <Link href="#pricing">
-                <motion.div
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="bg-card border-2 border-primary/30 text-foreground px-8 py-4 rounded-full text-lg font-bold backdrop-blur-sm hover:bg-primary/10 hover:border-primary transition-all duration-300 shadow-lg cursor-pointer"
-                >
-                  View Billing Plans
-                </motion.div>
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Pricing Table Section */}
       <section id="pricing" className="py-20 sm:py-32 bg-background relative overflow-hidden">
