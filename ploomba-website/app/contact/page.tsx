@@ -88,7 +88,7 @@ export default function ContactPage() {
   return (
     <main>
       {/* Enhanced Header Section */}
-      <section className="relative bg-linear-to-b from-muted/50 via-background to-background pt-32 pb-20 overflow-hidden">
+      <section className="relative bg-linear-to-b from-muted/50 via-background to-background pt-36 pb-20 overflow-hidden">
         {/* Decorative elements */}
         <motion.div
           className="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"

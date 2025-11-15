@@ -12,7 +12,7 @@ export default function PrivacyPolicyPage() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
       >
-        <div className="max-w-screen-xl mx-auto px-4 py-20 md:py-28 text-center">
+        <div className="max-w-screen-xl mx-auto px-4 pt-36 pb-20 text-center">
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}

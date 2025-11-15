@@ -236,27 +236,6 @@ const FeaturesShowcase: React.FC<{ className?: string }> = ({ className = '' }) 
       />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.8 }}
-          className="text-center max-w-3xl mx-auto mb-20"
-        >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-            <span className="text-foreground">Hardware & Software.</span>
-            <br />
-            <span className="bg-clip-text text-transparent bg-linear-to-r from-primary to-primary/60">
-              Perfectly Integrated.
-            </span>
-          </h2>
-          
-          <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-            Experience the synergy of robust hardware and intelligent software working together seamlessly
-          </p>
-        </motion.div>
-
         {/* Interactive Feature Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {allFeatures.map((feature, idx) => (

@@ -4,13 +4,45 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Book, BarChart, DollarSign, Check, Layers, Image as ImageIcon, TrendingUp, Link2 } from 'lucide-react';
-import FeaturesShowcase from '../../../src/components/homepage/FeaturesShowcase';
+import { Book, BarChart, DollarSign, Check, Brain, Camera, Cloud, MapPin } from 'lucide-react';
 
 export default function SoftwarePage() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const softwareFeatures = [
+    {
+      icon: Book,
+      title: "Complete Farm Management",
+      description: "Track all your fields, equipment, and operations in one intuitive platform. Keep everything organized with smart tagging and linking."
+    },
+    {
+      icon: Brain,
+      title: "AI-Powered Insights",
+      description: "Advanced machine learning models analyze your field data to predict yields, detect issues early, and optimize your operations."
+    },
+    {
+      icon: Camera,
+      title: "Visual Analytics",
+      description: "Store and analyze field photos to track crop health, identify diseases, and monitor produce quality throughout the season."
+    },
+    {
+      icon: BarChart,
+      title: "Data-Driven Forecasting",
+      description: "Make confident decisions with revenue predictions, market analysis, and comprehensive reports based on real-time data."
+    },
+    {
+      icon: Cloud,
+      title: "Cloud-Based Platform",
+      description: "Access your farm data from anywhere, on any device. Automatic backups and seamless synchronization across all your devices."
+    },
+    {
+      icon: MapPin,
+      title: "Field Mapping & Zones",
+      description: "Precise GPS mapping, zone management, and field visualization to optimize coverage and track every inch of your operation."
+    },
+  ];
 
   const features = [
     {
@@ -48,29 +80,6 @@ export default function SoftwarePage() {
         "Track historical data to identify profitable trends and optimize operations",
         "Make data-driven decisions about resource allocation and crop planning"
       ]
-    }
-  ];
-
-  const additionalFeatures = [
-    {
-      icon: Layers,
-      title: "Unified Management",
-      description: "Track fields, equipment, and Ploomba wagons all in one place with intuitive tagging and linking"
-    },
-    {
-      icon: ImageIcon,
-      title: "Visual Analytics",
-      description: "Store and analyze produce photos to identify quality issues and patterns throughout the season"
-    },
-    {
-      icon: TrendingUp,
-      title: "Market Intelligence",
-      description: "Stay ahead with real-time market pricing, seasonal trends, and regional expense benchmarks"
-    },
-    {
-      icon: Link2,
-      title: "Seamless Integration",
-      description: "Works perfectly with Ploomba's autonomous hardware for a complete farm management solution"
     }
   ];
 
@@ -132,8 +141,8 @@ export default function SoftwarePage() {
 
   return (
     <main>
-      {/* Enhanced Hero Section */}
-      <section className="relative bg-linear-to-b from-muted/50 via-background to-background pt-28 pb-12 overflow-hidden">
+      {/* Hero Section with Cards */}
+      <section className="relative bg-linear-to-b from-muted/50 via-background to-background pt-36 pb-20 overflow-hidden">
         {/* Decorative elements */}
         <motion.div
           className="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"
@@ -148,87 +157,79 @@ export default function SoftwarePage() {
           }}
         />
         
-        <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h1
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          {/* Header */}
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6"
+            className="text-center mb-16"
           >
-            <span className="text-foreground">Ploomba </span>
-            <span className="bg-clip-text text-transparent bg-linear-to-r from-primary to-primary/60">
-              Software
-            </span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
-          >
-            An all-in-one solution to analyze and forecast your farm, built for farmers and agronomists
-          </motion.p>
-        </div>
-      </section>
-
-      {/* Software Philosophy Section */}
-      <section className="py-20 sm:py-32 bg-background relative overflow-hidden">
-        <motion.div
-          className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"
-          animate={{
-            x: [0, 50, 0],
-            y: [0, -30, 0],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-        
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-5xl mx-auto"
-          >
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8"
-            >
-              <span className="text-foreground">Ploomba&apos;s software is built with </span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+              <span className="text-foreground">Ploomba </span>
               <span className="bg-clip-text text-transparent bg-linear-to-r from-primary to-primary/60">
-                farmers and agronomists
+                Software
               </span>
-              <span className="text-foreground"> in mind</span>
-            </motion.h2>
+            </h1>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="space-y-6 text-lg sm:text-xl text-muted-foreground leading-relaxed"
-            >
-              <p>
-                We want to provide a tool that not only{" "}
-                <span className="text-foreground font-semibold">works seamlessly with our autonomous hardware</span>, but acts as an{" "}
-                <span className="text-foreground font-semibold">all-in-one solution</span> to analyze and forecast your farm.
-              </p>
-
-              <motion.p
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="text-foreground/90 font-medium pt-2"
-              >
-                From field management to AI-driven insights, everything you need in one powerful platform—designed by people who understand agriculture.
-              </motion.p>
-            </motion.div>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              An all-in-one solution to analyze and forecast your farm, built for farmers and agronomists
+            </p>
           </motion.div>
+
+          {/* Software Features Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {softwareFeatures.map((feature, index) => {
+              const Icon = feature.icon;
+              return (
+                <motion.div
+                  key={feature.title}
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+                  whileHover={{ y: -8 }}
+                  className="group relative bg-card border-2 border-border rounded-3xl p-8 transition-all duration-300 hover:border-primary/50 hover:shadow-2xl overflow-hidden"
+                >
+                  {/* Hover gradient */}
+                  <div className="absolute inset-0 bg-linear-to-br from-primary/0 to-primary/0 group-hover:from-primary/10 group-hover:to-transparent transition-all duration-500" />
+                  
+                  <div className="relative z-10">
+                    {/* Icon */}
+                    <motion.div
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      transition={{ duration: 0.3 }}
+                      className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-linear-to-br from-primary/20 to-primary/5 mb-6 group-hover:from-primary/30 group-hover:to-primary/10 group-hover:shadow-lg"
+                    >
+                      <Icon className="w-8 h-8 text-primary" strokeWidth={2} />
+                    </motion.div>
+
+                    {/* Title */}
+                    <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
+                      {feature.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-base text-muted-foreground leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </div>
+
+                  {/* Shine effect */}
+                  <motion.div
+                    className="absolute inset-0 pointer-events-none"
+                    style={{
+                      background: 'linear-gradient(120deg, transparent, rgba(255,255,255,0.1), transparent)',
+                      transform: 'translateX(-100%)',
+                    }}
+                    whileHover={{
+                      transform: 'translateX(100%)',
+                    }}
+                    transition={{ duration: 0.6 }}
+                  />
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </section>
 
@@ -333,75 +334,6 @@ export default function SoftwarePage() {
           </div>
         </div>
       </section>
-
-      {/* Additional Features Grid */}
-      <section className="py-20 sm:py-32 bg-background relative overflow-hidden">
-        <motion.div
-          className="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"
-          animate={{
-            x: [0, 50, 0],
-            y: [0, -30, 0],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-              <span className="text-foreground">Everything You Need in </span>
-              <span className="bg-clip-text text-transparent bg-linear-to-r from-primary to-primary/60">
-                One Platform
-              </span>
-            </h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {additionalFeatures.map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ y: -8 }}
-                className="group relative bg-card border-2 border-border rounded-3xl p-6 transition-all duration-300 hover:border-primary/50 hover:shadow-2xl overflow-hidden"
-              >
-                {/* Hover gradient */}
-                <div className="absolute inset-0 bg-linear-to-br from-primary/0 to-primary/0 group-hover:from-primary/5 group-hover:to-transparent transition-all duration-500" />
-                
-                <div className="relative z-10">
-                  <motion.div
-                    whileHover={{ rotate: 360 }}
-                    transition={{ duration: 0.8 }}
-                    className="inline-flex items-center justify-center w-14 h-14 bg-linear-to-br from-primary/20 to-primary/5 rounded-xl mb-4 group-hover:from-primary/30 group-hover:to-primary/10 transition-all duration-300"
-                  >
-                    <feature.icon className="w-7 h-7 text-primary" strokeWidth={2} />
-                  </motion.div>
-                  <h4 className="text-lg font-bold mb-2 text-foreground group-hover:text-primary transition-colors duration-300">
-                    {feature.title}
-                  </h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Features Showcase */}
-      <FeaturesShowcase />
 
       {/* Pricing Table Section */}
       <section id="pricing" className="py-20 sm:py-32 bg-background relative overflow-hidden">

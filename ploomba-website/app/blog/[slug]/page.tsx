@@ -153,7 +153,7 @@ export default function PostPage() {
 
   // 5. Render the new, structured layout
   return (
-    <main className="pt-28">
+    <main className="pt-36">
       {/* --- Article Header --- */}
       <motion.header
         className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center pb-12"
