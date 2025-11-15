@@ -186,7 +186,7 @@ export default function SoftwarePage() {
                   key={feature.title}
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+                  transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
                   whileHover={{ y: -8 }}
                   className="group relative bg-card border-2 border-border rounded-3xl p-8 transition-all duration-300 hover:border-primary/50 hover:shadow-2xl overflow-hidden"
                 >

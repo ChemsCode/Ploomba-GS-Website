@@ -48,9 +48,8 @@ const MissionVision: React.FC<MissionVisionProps> = ({ className = '' }) => {
           {/* Left Column - Mission */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.6, ease: "easeOut" }}
             className="relative"
           >
             <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6 leading-tight">
@@ -65,9 +64,8 @@ const MissionVision: React.FC<MissionVisionProps> = ({ className = '' }) => {
             {/* Decorative line */}
             <motion.div
               initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.3 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.8, delay: 0.9 }}
               className="h-1 w-32 bg-linear-to-r from-primary to-transparent rounded-full origin-left"
             />
           </motion.div>
@@ -75,18 +73,16 @@ const MissionVision: React.FC<MissionVisionProps> = ({ className = '' }) => {
           {/* Right Column - Values */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.8, ease: "easeOut" }}
           >
             <div className="space-y-6">
               {values.map((value, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.0 + index * 0.1, duration: 0.6 }}
                   whileHover={{ scale: 1.02, x: 5 }}
                   className="group relative rounded-2xl border border-border bg-card/50 backdrop-blur-sm p-6 hover:border-primary/40 transition-all duration-300 overflow-hidden"
                 >

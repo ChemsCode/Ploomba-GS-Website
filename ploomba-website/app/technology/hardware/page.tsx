@@ -167,7 +167,7 @@ export default function WagonPage() {
                 key={spec.label}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+                transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
                 className="text-center p-6 bg-card border-2 border-border rounded-2xl hover:border-primary/50 transition-all duration-300"
               >
                 <spec.icon className="w-8 h-8 text-primary mx-auto mb-3" strokeWidth={2} />
@@ -184,9 +184,8 @@ export default function WagonPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.0 }}
             className="text-center mb-16"
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
@@ -203,9 +202,8 @@ export default function WagonPage() {
           {/* Image Placeholder */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
             className="relative rounded-3xl overflow-hidden border-2 border-border shadow-2xl bg-muted/30"
           >
             <div className="aspect-video flex items-center justify-center">
@@ -249,7 +247,7 @@ export default function WagonPage() {
                   className="group bg-card border-2 border-border rounded-3xl p-8 hover:border-primary/50 hover:shadow-2xl transition-all duration-300"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0">
+                    <div className="shrink-0">
                       <div className="w-14 h-14 bg-linear-to-br from-primary/20 to-primary/5 rounded-xl flex items-center justify-center group-hover:from-primary/30 group-hover:to-primary/10 transition-all duration-300">
                         <Icon className="w-7 h-7 text-primary" strokeWidth={2} />
                       </div>
@@ -366,15 +364,15 @@ export default function WagonPage() {
               </p>
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 text-foreground">
-                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
                   <span>Computer vision + RTK GPS navigation</span>
                 </li>
                 <li className="flex items-center gap-3 text-foreground">
-                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
                   <span>Fleet-wide knowledge sharing</span>
                 </li>
                 <li className="flex items-center gap-3 text-foreground">
-                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
                   <span>Over-the-air software updates</span>
                 </li>
               </ul>
@@ -414,7 +412,7 @@ export default function WagonPage() {
                 transition={{ duration: 0.5, delay: index * 0.05 }}
                 className="flex items-center gap-3 p-4 bg-card border border-border rounded-xl hover:border-primary/50 transition-all duration-300"
               >
-                <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
                 <span className="text-foreground font-medium">{feature}</span>
               </motion.div>
             ))}
@@ -447,9 +445,9 @@ export default function WagonPage() {
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
               <span className="text-foreground">Technical </span>
-              <span className="bg-clip-text text-transparent bg-linear-to-r from-primary to-primary/60">
+            <span className="bg-clip-text text-transparent bg-linear-to-r from-primary to-primary/60">
                 Specifications
-              </span>
+            </span>
             </h2>
           </motion.div>
 
@@ -578,7 +576,7 @@ export default function WagonPage() {
                 <ChevronRight className="w-6 h-6" />
               </motion.button>
             </Link>
-          </motion.div>
+              </motion.div>
         </div>
       </section>
     </main>

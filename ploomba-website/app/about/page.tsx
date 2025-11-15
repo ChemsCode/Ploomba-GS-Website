@@ -34,7 +34,7 @@ export default function AboutPage() {
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6"
           >
             <span className="text-foreground">About </span>
@@ -46,7 +46,7 @@ export default function AboutPage() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
           >
             Pioneering the future of agriculture through innovation, sustainability, and farmer-focused technology
